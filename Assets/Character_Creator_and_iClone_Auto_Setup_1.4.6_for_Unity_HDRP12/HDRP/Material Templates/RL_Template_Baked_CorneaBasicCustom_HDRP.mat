@@ -27,7 +27,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 12
+  version: 13
   hdPluginSubTargetMaterialVersions:
     m_Keys: []
     m_Values: 
@@ -39,8 +39,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RL_Template_Baked_CorneaBasicCustom_HDRP
-  m_Shader: {fileID: -6465566751694194690, guid: c1ebe84cd1b59cc4fb98a8e03ae3f7d1,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: c1ebe84cd1b59cc4fb98a8e03ae3f7d1, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   m_InvalidKeywords: []
@@ -56,6 +57,7 @@ Material:
   - TransparentBackface
   - RayTracingPrepass
   - MOTIONVECTORS
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -147,9 +149,9 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _DiffusionProfileAsset: {r: -2.1948957e-10, g: -1.1787802e+22, b: 526403400,
-        a: 5.395903e-11}
+    - _DiffusionProfileAsset: {r: -2.1948957e-10, g: -1.1787802e+22, b: 526403400, a: 5.395903e-11}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
