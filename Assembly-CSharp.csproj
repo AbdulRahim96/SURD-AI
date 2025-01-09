@@ -73,12 +73,13 @@
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\in Game Assets\NativeAmericanPack\Source\Shaders\DirectionalBlend.shader" />
     <None Include="Assets\Invector-3rdPersonController_LITE\README_Basic.txt" />
     <None Include="Assets\Character_Creator_and_iClone_Auto_Setup_1.4.6_for_Unity_HDRP12\HDRP\Material Templates\notes.txt" />
-    <None Include="Assets\Saad\Saad_ImportInfo.txt" />
-    <None Include="Assets\fahad\Fahad_ImportInfo.txt" />
-    <None Include="Assets\Rahim\Rahim_ImportInfo.txt" />
-    <None Include="Assets\Usman\Usman_ImportInfo.txt" />
+    <None Include="Assets\in Game Assets\Characters\Saad\Saad_ImportInfo.txt" />
+    <None Include="Assets\in Game Assets\Characters\fahad\Fahad_ImportInfo.txt" />
+    <None Include="Assets\in Game Assets\Characters\Rahim\Rahim_ImportInfo.txt" />
+    <None Include="Assets\in Game Assets\Characters\Usman\Usman_ImportInfo.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
