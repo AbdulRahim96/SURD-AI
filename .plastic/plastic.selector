@@ -1,4 +1,0 @@
-repository "SURD AI@AbdulRahim_DSU@cloud"
-  path "/"
-    br "/main"
-    co "/main"
