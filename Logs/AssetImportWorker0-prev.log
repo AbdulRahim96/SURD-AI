@@ -1,10 +1,10 @@
 Using pre-set license
-Built from '2021.3/staging' branch; Version is '2021.3.15f1 (e8e88683f834) revision 15263878'; Using compiler version '192829333'; Build Type 'Release'
+Built from '6000.0/staging' branch; Version is '6000.0.30f1 (62b05ba0686a) revision 6467675'; Using compiler version '193933523'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'en' Physical Memory: 7860 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2021.3.15f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\6000.0.30f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,7 +15,13 @@ D:/Unity Projects/SURD-AI
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64124
+54013
+-job-worker-count
+5
+-background-job-worker-count
+8
+-asset-garbage-collectors
+1
 Successfully changed project path to: D:/Unity Projects/SURD-AI
 D:/Unity Projects/SURD-AI
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -39,6 +45,8 @@ D:/Unity Projects/SURD-AI
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
     "memorysetup-temp-allocator-size-background-worker=32768"
     "memorysetup-temp-allocator-size-job-worker=262144"
     "memorysetup-temp-allocator-size-preload-manager=33554432"
@@ -46,194 +54,334 @@ D:/Unity Projects/SURD-AI
     "memorysetup-temp-allocator-size-audio-worker=65536"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [17580] Host "[IP] 192.168.18.242 [Port] 0 [Flags] 2 [Guid] 1134886989 [EditorId] 1134886989 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-1OD5SGNG) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [18144]  Target information:
 
-Player connection [17580] Host "[IP] 192.168.18.242 [Port] 0 [Flags] 2 [Guid] 1134886989 [EditorId] 1134886989 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-1OD5SGNG) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [18144]  * "[IP] 192.168.18.242 [Port] 0 [Flags] 2 [Guid] 4136409487 [EditorId] 4136409487 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-1OD5SGNG) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Refreshing native plugins compatible for Editor in 63.01 ms, found 3 plugins.
+Player connection [18144] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [18144] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 13.67 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2021.3.15f1 (e8e88683f834)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
+Initialize engine version: 6000.0.30f1 (62b05ba0686a)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/Unity Projects/SURD-AI/Assets
-GfxDevice: creating device client; threaded=0; jobified=0
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3050 Laptop GPU (ID=0x25a2)
-    Vendor:   NVIDIA
-    VRAM:     3964 MB
-    Driver:   32.0.15.5613
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        NVIDIA GeForce RTX 3050 Laptop GPU (ID=0x25a2)
+    Vendor:          NVIDIA
+    VRAM:            3964 MB
+    App VRAM Budget: 3369 MB
+    Driver:          32.0.15.5613
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56692
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56020
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003950 seconds.
-Native extension for WindowsStandalone target not found
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.023141 seconds.
+- Loaded All Assemblies, in  1.302 seconds
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 49.44 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.630 seconds
-Domain Reload Profiling:
-	ReloadAssembly (630ms)
-		BeginReloadAssembly (95ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (0ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (423ms)
-			LoadAssemblies (92ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (119ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (36ms)
-			SetupLoadedEditorAssemblies (210ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (56ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (50ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (72ms)
-				ProcessInitializeOnLoadMethodAttributes (32ms)
-				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (0ms)
-Platform modules already initialized, skipping
-Registering precompiled user dll's ...
-Registered in 0.003593 seconds.
-Begin MonoManager ReloadAssembly
+Android Extension - Scanning For ADB Devices 1151 ms
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.080 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1081ms)
-		BeginReloadAssembly (250ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (140ms)
-		EndReloadAssembly (724ms)
-			LoadAssemblies (108ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (241ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (335ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (55ms)
-				ProcessInitializeOnLoadAttributes (246ms)
-				ProcessInitializeOnLoadMethodAttributes (13ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
-Platform modules already initialized, skipping
+- Finished resetting the current domain, in  1.882 seconds
+Domain Reload Profiling: 3177ms
+	BeginReloadAssembly (497ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (3ms)
+	RebuildCommonClasses (139ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (172ms)
+	LoadAllAssembliesAndSetupDomain (462ms)
+		LoadAssemblies (467ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (453ms)
+			TypeCache.Refresh (450ms)
+				TypeCache.ScanAssembly (414ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1884ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1788ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (1404ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (93ms)
+			ProcessInitializeOnLoadAttributes (196ms)
+			ProcessInitializeOnLoadMethodAttributes (88ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.758 seconds
+'Packages/com.unity.render-pipelines.high-definition/Editor/Wizard/HDWizard.UIElement.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.high-definition/Editor/Wizard/HDWizard.Configuration.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.high-definition/Editor/Wizard/HDWizard.Window.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 1.13 ms, found 3 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.140 seconds
+Domain Reload Profiling: 4895ms
+	BeginReloadAssembly (275ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (45ms)
+	RebuildCommonClasses (62ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (67ms)
+	LoadAllAssembliesAndSetupDomain (1333ms)
+		LoadAssemblies (903ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (607ms)
+			TypeCache.Refresh (438ms)
+				TypeCache.ScanAssembly (408ms)
+			BuildScriptInfoCaches (145ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (3141ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2848ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (26ms)
+			SetLoadedEditorAssemblies (10ms)
+			BeforeProcessingInitializeOnLoad (304ms)
+			ProcessInitializeOnLoadAttributes (1465ms)
+			ProcessInitializeOnLoadMethodAttributes (1034ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 3.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3108 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 23 unused Assets / (2.0 MB). Loaded Objects now: 3575.
-Memory consumption went from 141.1 MB to 139.1 MB.
-Total: 6.969900 ms (FindLiveObjects: 0.290400 ms CreateObjectMapping: 0.400300 ms MarkObjects: 5.504200 ms  DeleteObjects: 0.773100 ms)
+Unloading 462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6674 unused Assets / (7.8 MB). Loaded Objects now: 7658.
+Memory consumption went from 289.2 MB to 281.5 MB.
+Total: 24.024200 ms (FindLiveObjects: 3.053100 ms CreateObjectMapping: 1.241700 ms MarkObjects: 12.934900 ms  DeleteObjects: 6.788900 ms)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 181914.757268 seconds.
-  path: Assets/Characters
-  artifactKey: Guid(ed1cc2baca2bef64f948ac488955d506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters using Guid(ed1cc2baca2bef64f948ac488955d506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '378563710c064cf618717eb127b6cc1b') in 0.012952 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.331160 seconds.
-  path: Assets/Character_Creator_and_iClone_Auto_Setup_1.4.6_for_Unity_HDRP12/HDRP
-  artifactKey: Guid(04ab3ceb76b02e24494fd6d8d8e49d57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character_Creator_and_iClone_Auto_Setup_1.4.6_for_Unity_HDRP12/HDRP using Guid(04ab3ceb76b02e24494fd6d8d8e49d57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57b23dc4b7008551b0e40d70d0ad7e0c') in 0.003900 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.715922 seconds.
-  path: Assets/Character_Creator_and_iClone_Auto_Setup_1.4.6_for_Unity_HDRP12/HDRP/Preview Scene
-  artifactKey: Guid(e55f291b931fc4d448ad540d28a8a7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character_Creator_and_iClone_Auto_Setup_1.4.6_for_Unity_HDRP12/HDRP/Preview Scene using Guid(e55f291b931fc4d448ad540d28a8a7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec9341825d38565ea7c86763564a7daa') in 0.003318 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 394.214092 seconds.
-  path: Assets/Characters/fahad
-  artifactKey: Guid(6ea9fb43a069b0444a5477832a804e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/fahad using Guid(6ea9fb43a069b0444a5477832a804e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b0cee8efb5b46f99f13715a1af11e20') in 0.009220 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.536587 seconds.
-  path: Assets/Characters/fahad/Fahad.Fbx
-  artifactKey: Guid(19b69996a1c0040459138279f103545a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/fahad/Fahad.Fbx using Guid(19b69996a1c0040459138279f103545a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f195edb77705d5cb4aea5da6eda66c6') in 3.215971 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 148.671364 seconds.
-  path: Assets/Characters/fahad/Prefabs/Fahad.prefab
-  artifactKey: Guid(32397822d5f448c45a679bb164c9885a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/fahad/Prefabs/Fahad.prefab using Guid(32397822d5f448c45a679bb164c9885a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (Fahad_animator) you have used is not valid. Animations will not play
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+  Time since last request: 17770.193999 seconds.
+  path: Assets/in Game Assets/NativeAmericanPack/Level 2.unity
+  artifactKey: Guid(16a3a738879b478469a681bc45331f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/in Game Assets/NativeAmericanPack/Level 2.unity using Guid(16a3a738879b478469a681bc45331f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '224bdbc415994c2e3cee7f33c8fbb82a') in 0.0391846 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
-[C:\build\output\unity\unity\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  9.863 seconds
+'Packages/com.unity.render-pipelines.high-definition/Editor/Wizard/HDWizard.UIElement.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.high-definition/Editor/Wizard/HDWizard.Configuration.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.high-definition/Editor/Wizard/HDWizard.Window.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 1.22 ms, found 3 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.781 seconds
+Domain Reload Profiling: 12664ms
+	BeginReloadAssembly (4863ms)
+		ExecutionOrderSort (26ms)
+		DisableScriptedObjects (461ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (12ms)
+		CreateAndSetChildDomain (1828ms)
+	RebuildCommonClasses (159ms)
+	RebuildNativeTypeToScriptingClass (50ms)
+	initialDomainReloadingComplete (159ms)
+	LoadAllAssembliesAndSetupDomain (4651ms)
+		LoadAssemblies (3343ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (2013ms)
+			TypeCache.Refresh (257ms)
+				TypeCache.ScanAssembly (36ms)
+			BuildScriptInfoCaches (1618ms)
+			ResolveRequiredComponents (71ms)
+	FinalizeReload (2783ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2185ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (55ms)
+			SetLoadedEditorAssemblies (26ms)
+			BeforeProcessingInitializeOnLoad (446ms)
+			ProcessInitializeOnLoadAttributes (1363ms)
+			ProcessInitializeOnLoadMethodAttributes (264ms)
+			AfterProcessingInitializeOnLoad (29ms)
+			EditorAssembliesLoaded (2ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (61ms)
+Refreshing native plugins compatible for Editor in 5.98 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 44 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6759 unused Assets / (12.4 MB). Loaded Objects now: 7762.
+Memory consumption went from 278.5 MB to 266.2 MB.
+Total: 45.107900 ms (FindLiveObjects: 5.211400 ms CreateObjectMapping: 2.205700 ms MarkObjects: 18.840700 ms  DeleteObjects: 18.840500 ms)
 
-The Animator Controller (Fahad_animator) you have used is not valid. Animations will not play
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\build\output\unity\unity\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
-
- -> (artifact id: '25f36b7f2a1c9de61367e1b4514ae489') in 2.395492 seconds 
+Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 122.986438 seconds.
-  path: Assets/Characters/fahad/Prefabs/Fahad.prefab
-  artifactKey: Guid(32397822d5f448c45a679bb164c9885a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/fahad/Prefabs/Fahad.prefab using Guid(32397822d5f448c45a679bb164c9885a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b41bdad2961d7ed864188adce5bc35a0') in 3.401570 seconds 
+  Time since last request: 311.882699 seconds.
+  path: Assets/uLipSync/Samples
+  artifactKey: Guid(2024e3cf1d6f4bf4d9854e6ca45f4d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples using Guid(2024e3cf1d6f4bf4d9854e6ca45f4d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6406844959e3046d1dea4b75473c7158') in 0.0193759 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
 ========================================================================
 Received Import Request.
-  Time since last request: 416.597530 seconds.
-  path: Assets/Characters/fahad/Fahad.fbm/Scalp_Transparency_Diffuse.png
-  artifactKey: Guid(e730477bacb02564e9dbe798dfc6eabf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/fahad/Fahad.fbm/Scalp_Transparency_Diffuse.png using Guid(e730477bacb02564e9dbe798dfc6eabf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38baf79005a09bd0548dec0b34ba0880') in 0.263304 seconds 
+  Time since last request: 13.428700 seconds.
+  path: Assets/uLipSync/Samples/01. Play AudioClip
+  artifactKey: Guid(a3a31c03c03f94ac7bda90897739bb32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/01. Play AudioClip using Guid(a3a31c03c03f94ac7bda90897739bb32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'de850b3d4de061cc88011a094e6137e3') in 0.0389509 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.610077 seconds.
+  path: Assets/uLipSync/Samples/02. Mic Input
+  artifactKey: Guid(d4a843bb99857e44eb4960f6bc221490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/02. Mic Input using Guid(d4a843bb99857e44eb4960f6bc221490) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '06100ff5703dc9e59f74785f1f5acb24') in 0.0009664 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.977123 seconds.
+  path: Assets/uLipSync/Samples/02. Mic Input/Test Profile.asset
+  artifactKey: Guid(0ab29d42fe7734fd1a10ff7231a2ed39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/02. Mic Input/Test Profile.asset using Guid(0ab29d42fe7734fd1a10ff7231a2ed39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '83706a3ff098682aa1c13f4aff8dcb2d') in 0.0676592 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.071789 seconds.
+  path: Assets/uLipSync/Samples/02. Mic Input/02-1. Mic Input.unity
+  artifactKey: Guid(adec564e2d616c94589b093ed17473c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/02. Mic Input/02-1. Mic Input.unity using Guid(adec564e2d616c94589b093ed17473c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'df85b8819fb1fcdac6852bd0ce000c24') in 0.0026184 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.659482 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Stage/Textures/unitychan_tile6.png
+  artifactKey: Guid(44c03eb9b0d2ef34b9e7a60eec7f1b1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Stage/Textures/unitychan_tile6.png using Guid(44c03eb9b0d2ef34b9e7a60eec7f1b1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4924e2bbeea23874b06fb2cc34946b4d') in 0.1450373 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.314302 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/body_01.tga
+  artifactKey: Guid(f9c6074c5a78e71448f9efd3013cadda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/body_01.tga using Guid(f9c6074c5a78e71448f9efd3013cadda) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3ff3116df6ea87cc8652be156a465572') in 0.0206632 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/ENV2.tga
+  artifactKey: Guid(763c5d30206d1d54a9b49b3309e37fe1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/ENV2.tga using Guid(763c5d30206d1d54a9b49b3309e37fe1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '84dcdaa63326d166c5cba24dab8d92bc') in 0.0134851 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/FO_RIM1.tga
+  artifactKey: Guid(a18067604964b5a4d8fd5552ed0d789e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/FO_RIM1.tga using Guid(a18067604964b5a4d8fd5552ed0d789e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e8f3712691e1a45c388494f7d011186a') in 0.0130568 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.822344 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/eyeline_00.tga
+  artifactKey: Guid(e315db926a0705845b12da3cc80ea306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/eyeline_00.tga using Guid(e315db926a0705845b12da3cc80ea306) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '88e65f5188e53eb597f7959a47290037') in 0.013791 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 26 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 27 unused Assets / (6.3 MB). Loaded Objects now: 7765.
+Memory consumption went from 270.2 MB to 263.9 MB.
+Total: 315.538300 ms (FindLiveObjects: 9.371400 ms CreateObjectMapping: 0.350900 ms MarkObjects: 269.567600 ms  DeleteObjects: 36.239800 ms)
+
+Prepare: number of updated asset objects reloaded= 4
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 2.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 26 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (6.3 MB). Loaded Objects now: 7765.
+Memory consumption went from 286.0 MB to 279.8 MB.
+Total: 14.326400 ms (FindLiveObjects: 0.542700 ms CreateObjectMapping: 0.316600 ms MarkObjects: 10.398900 ms  DeleteObjects: 3.064400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 173.281030 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/FO_SKIN1.tga
+  artifactKey: Guid(a1d5b2277eb3f6245900378e6fa97575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/FO_SKIN1.tga using Guid(a1d5b2277eb3f6245900378e6fa97575) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1ad4c77aacaee8537fc1234ce76682a5') in 0.2828142 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/FO_RIM1.tga
+  artifactKey: Guid(a18067604964b5a4d8fd5552ed0d789e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/FO_RIM1.tga using Guid(a18067604964b5a4d8fd5552ed0d789e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e3566e6708e746f55a34235e7606b488') in 0.0250634 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.180808 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/FO_CLOTH1.tga
+  artifactKey: Guid(cc8f70f2ec571e9478efa98c041cde7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/FO_CLOTH1.tga using Guid(cc8f70f2ec571e9478efa98c041cde7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '983ab651936ab0bfa8f8871568fd8e56') in 0.0128983 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/hair_01_SPEC.tga
+  artifactKey: Guid(c4271b2b1e8bfa949aa9230abaa7709e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uLipSync/Samples/00. Common/UnityChan/Models/UnityChanShader/Texture/hair_01_SPEC.tga using Guid(c4271b2b1e8bfa949aa9230abaa7709e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ebfa42157850ff3ed0591c1b93a35571') in 0.0233787 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
