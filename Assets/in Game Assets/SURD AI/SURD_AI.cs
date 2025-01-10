@@ -6,53 +6,62 @@ using UnityEngine.Networking;
 
 public class SURD_AI : MonoBehaviour
 {
+    public static SURD_AI Instance;
     [SerializeField] private string apiUrl = "https://c285-111-88-39-203.ngrok-free.app/ai-model";
 
-    private void Start()
+    public AIModelInput modelInput;
+
+    private void Awake()
     {
-        CallAIModel("Hello there");
+        Instance = this;
     }
 
-    public void CallAIModel(string input)
+    public void SendToSURDModel(string input)
     {
-        // Start the coroutine to send the request
-        StartCoroutine(SendRequest(input));
+        modelInput.input = input;
+       // StartCoroutine(CallAIModel(modelInput));
     }
-
-    private IEnumerator SendRequest(string input)
+    public IEnumerator CallAIModel(AIModelInput payload)
     {
-        // Create the JSON payload
-        //string jsonPayload = JsonUtility.ToJson(new AIRequest { input = input });
+        string jsonPayload = JsonUtility.ToJson(payload);
 
-        // Create a UnityWebRequest
-        using (UnityWebRequest webRequest = new UnityWebRequest(apiUrl, "POST"))
+        // Create UnityWebRequest
+        UnityWebRequest request = new UnityWebRequest(apiUrl, "POST");
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        // Send the request
+        yield return request.SendWebRequest();
+
+        // Handle the response
+        if (request.result == UnityWebRequest.Result.Success)
         {
-            // Attach JSON payload to the request
-            //byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonPayload);
-            //webRequest.uploadHandler = new UploadHandlerRaw(bodyRaw);
-            webRequest.downloadHandler = new DownloadHandlerBuffer();
-            webRequest.SetRequestHeader("Content-Type", "application/json");
-            print("sending...");
-            // Send the request and wait for a response
-            yield return webRequest.SendWebRequest();
-
-            if (webRequest.result == UnityWebRequest.Result.Success)
-            {
-                // Handle the response
-                Debug.Log("Response: " + webRequest.downloadHandler.text);
-            }
-            else
-            {
-                // Handle the error
-                Debug.LogError("Error: " + webRequest.error);
-            }
+            string jsonResponse = request.downloadHandler.text;
+            AIModelResponse response = JsonUtility.FromJson<AIModelResponse>(jsonResponse);
+            Debug.Log("AI Response: " + response.response);
+        }
+        else
+        {
+            Debug.LogError("Error: " + request.error);
         }
     }
 
     [System.Serializable]
-    public class AIRequest
+    public class AIModelInput
     {
+        [TextArea(1, 5)]
         public string input;
+        public string model;
+        public float temperature;
+        public float top_p;
+    }
+
+    [System.Serializable]
+    public class AIModelResponse
+    {
+        public string response;
     }
 
 }

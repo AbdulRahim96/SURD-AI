@@ -10,7 +10,7 @@ public class callReq : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(CallAIModel(modelInput);
+        StartCoroutine(CallAIModel(modelInput));
     }
 
     public IEnumerator CallAIModel(AIModelInput payload)
