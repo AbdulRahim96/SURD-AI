@@ -66,16 +66,20 @@
     <Compile Include="Assets\Invector-3rdPersonController_LITE\3D Models\Others\HealthItem\vAnimateUV.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonMotor.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonInput.cs" />
-    <Compile Include="Assets\in Game Assets\Script\Agent.cs" />
-    <Compile Include="Assets\in Game Assets\Script\ActionHandler.cs" />
-    <Compile Include="Assets\in Game Assets\Script\InputManager.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\Script\IO_Manager.cs" />
+    <Compile Include="Assets\BulletDamage.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vComment.cs" />
-    <Compile Include="Assets\in Game Assets\Script\Processor.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vExtensions.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\Script\Processor.cs" />
+    <Compile Include="Assets\LookAtCamera.cs" />
+    <Compile Include="Assets\Health.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vPickupItem.cs" />
-    <Compile Include="Assets\in Game Assets\Script\Interactables.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\Script\Agent.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\Parsing Test.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\Script\ActionHandler.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Camera\vThirdPersonCamera.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\Script\Interactables.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonAnimator.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonController.cs" />
   </ItemGroup>
@@ -83,8 +87,10 @@
     <None Include="Assets\in Game Assets\NativeAmericanPack\Source\Shaders\DirectionalBlend.shader" />
     <None Include="Assets\Invector-3rdPersonController_LITE\README_Basic.txt" />
     <None Include="Assets\Character_Creator_and_iClone_Auto_Setup_1.4.6_for_Unity_HDRP12\HDRP\Material Templates\notes.txt" />
+    <None Include="Assets\in Game Assets\Characters\Saud\Saud_ImportInfo.txt" />
     <None Include="Assets\in Game Assets\Characters\Saad\Saad_ImportInfo.txt" />
     <None Include="Assets\in Game Assets\Characters\fahad\Fahad_ImportInfo.txt" />
+    <None Include="Assets\in Game Assets\PolygonParticles\Materials\SHARED BY LUXURYPANDA.txt" />
     <None Include="Assets\in Game Assets\Characters\Rahim\Rahim_ImportInfo.txt" />
     <None Include="Assets\in Game Assets\Characters\Usman\Usman_ImportInfo.txt" />
   </ItemGroup>
@@ -565,8 +571,24 @@
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil">
@@ -1255,6 +1277,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{4A54600A-535E-D6AB-1D7D-9F25C5FB3818}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="soupday.cc3_unity_tools.runtime.csproj">
       <Project>{5EA03101-EEA6-FF14-275C-C065BA28B0E0}</Project>
       <Name>soupday.cc3_unity_tools.runtime</Name>
