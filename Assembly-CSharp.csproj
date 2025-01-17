@@ -71,14 +71,17 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_EdgeStepDetector.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Math Helpers\Math\FEngineering.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\callReq.cs" />
+    <Compile Include="Assets\ThirdParty\Vosk\SpkModel.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\SURD_AI.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.Features.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_InsectLegsHelper.cs" />
+    <Compile Include="Assets\Scripts\VoskResultText.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Math Helpers\Helpers\FColorMethods.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\3D Models\Others\HealthItem\vAnimateUV.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_SlopePusher.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonMotor.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonInput.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Rifle.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Setup Settings\LegsA.IK.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\Script\IO_Manager.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.ImpulseSettings.cs" />
@@ -87,34 +90,47 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Modules - Community\Custom IK Example\AxisLockableIK.cs" />
     <Compile Include="Assets\BulletDamage.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.Prepare.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_StabilizePoseOnIdle.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Modules - Community\Custom IK Example\LAM_IKAlgorithmSwitch.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\GUI Helpers\FGUI_Inspector.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_AnimationCurvesGlueCondition.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
+    <Compile Include="Assets\Scripts\Player\FootIK.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Shootgun.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vComment.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCameraSystem.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Forwarding\LegsA.Settings.StepAlign.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.Manage.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\Property Attributes\FPD_LayersAttribute.cs" />
+    <Compile Include="Assets\ThirdParty\Vosk\VoskPINVOKE.cs" />
+    <Compile Include="Assets\Scripts\VoskSpeechToText.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\Inspector And Scene Tools\FHierarchyIcons.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_ParamChanger_UnglueOnAngle.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.ExtraControls.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\Glueing Helpers\LegsA.Glue.Attachement.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA.Initialization.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.Helpers.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_InsectBodyElevateHelper.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Glue.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vExtensions.cs" />
+    <Compile Include="Assets\ThirdParty\Vosk\VoskRecognizer.cs" />
+    <Compile Include="Assets\Scripts\Weapons\GunInfoUI.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA.AutoFinding.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_FadeLegOnAnimator.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\Inspector And Scene Tools\FEditor_Handles.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\Property Attributes\FPD_SuffixAttribute.cs" />
+    <Compile Include="Assets\ThirdParty\Vosk\Vosk.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\Property Attributes\FPD_HeaderAttribute.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Modules - Community\LAM_FadeGluingOnAnimatorParam.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.Stability.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegMotionSettingsPreset.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.Events.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.ExtraModules.Helper.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\Bases\LegsAnimatorControlModuleBase.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Setup Settings\LegsA.MainSetup.cs" />
@@ -124,9 +140,12 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Setup Settings\LegsA.Raycasting.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\Script\Processor.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\FDebug_PerformanceTest.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Crosshair.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.Reference.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Modules - Community\LAM_FadeLegsSystemOnAnimator.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\LookAtCamera.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_RedirectRaycasting.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_DesiredDirectionFromTransform.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_RotationStability.cs" />
@@ -144,6 +163,7 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Animating Help\AnimationGenerateUtils.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\Glueing Helpers\LegsA.Glue.Conditions.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vPickupItem.cs" />
+    <Compile Include="Assets\Scripts\RecognitionResult.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.Bone.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_AutoGroundAlignBodyMatrix.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_ImpulsesOnStopAndOnLand.cs" />
@@ -160,11 +180,14 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.Stability.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Animating Help\SkeletonRecognize.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\Script\Agent.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Animating Help\MotionInfluenceProcessor.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.Raycasting.cs" />
+    <Compile Include="Assets\Scripts\VoiceProcessor.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_HardGlueOnStop.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\Parsing Test.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\GUI Helpers\FGUI_Handles.cs" />
+    <Compile Include="Assets\Scripts\VoskDialogText.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Level Design\Generators Shared\FGenerators\FGenerators.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\Script\ActionHandler.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\GUI Helpers\FGUI_Resources.cs" />
@@ -176,26 +199,38 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Forwarding\LegsA.Settings.Animating.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonAnimator.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonController.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Equipment.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.IK.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\Inspector And Scene Tools\FSceneIcons.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Math Helpers\Math\FVectorMethods.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Level Design\Generators Shared\Helpers\MinMax.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.Controll.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.cs" />
+    <Compile Include="Assets\ThirdParty\Vosk\Model.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\GUI Helpers\FGUI_Finders.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\ThirdParty\Zip\Ionic.Zip.Unity.dll" />
+    <None Include="Assets\ThirdParty\Zip\License.txt" />
+    <None Include="Assets\ThirdParty\Vosk\Plugins\Windows\libwinpthread-1.dll" />
+    <None Include="Assets\ThirdParty\Vosk\Plugins\Windows\libvosk.dll" />
     <None Include="Assets\in Game Assets\NativeAmericanPack\Source\Shaders\DirectionalBlend.shader" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Legs Animator - Readme.txt" />
     <None Include="Assets\Invector-3rdPersonController_LITE\README_Basic.txt" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Presets Directory\Leg Motion Presets\dummy.txt" />
     <None Include="Assets\Character_Creator_and_iClone_Auto_Setup_1.4.6_for_Unity_HDRP12\HDRP\Material Templates\notes.txt" />
+    <None Include="Assets\ThirdParty\Vosk\Plugins\Windows\libstdc++-6.dll" />
+    <None Include="Assets\in Game Assets\Characters\Daniyal\Daniyal_ImportInfo.txt" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Presets Directory\Leg Custom Module Presets\dummy.txt" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Presets Directory\Leg Impulses Presets\dummy.txt" />
     <None Include="Assets\in Game Assets\Characters\Saud\Saud_ImportInfo.txt" />
     <None Include="Assets\in Game Assets\Characters\Saad\Saad_ImportInfo.txt" />
     <None Include="Assets\in Game Assets\Characters\fahad\Fahad_ImportInfo.txt" />
+    <None Include="Assets\Blink\Tools\SkinnedMeshTransfer\README.txt" />
     <None Include="Assets\in Game Assets\PolygonParticles\Materials\SHARED BY LUXURYPANDA.txt" />
+    <None Include="Assets\ThirdParty\Zip\Ionic.Zip.Unity.XML" />
+    <None Include="Assets\ThirdParty\Vosk\Plugins\Windows\libgcc_s_seh-1.dll" />
     <None Include="Assets\in Game Assets\Characters\Rahim\Rahim_ImportInfo.txt" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Presets Directory\dummy.txt" />
     <None Include="Assets\in Game Assets\Characters\Usman\Usman_ImportInfo.txt" />
@@ -701,6 +736,10 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip.Unity">
+      <HintPath>Assets\ThirdParty\Zip\Ionic.Zip.Unity.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1211,6 +1250,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Animation.Rigging.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
       <Private>False</Private>
@@ -1271,6 +1314,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Autodesk.Fbx">
+      <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
       <Private>False</Private>
@@ -1299,6 +1346,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Animation.Rigging">
+      <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1321,6 +1372,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Autodesk.Fbx.Editor">
+      <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
@@ -1355,12 +1410,20 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Burst">
@@ -1436,6 +1499,10 @@
     <ProjectReference Include="uLipSync.Samples.Animator.Runtime.csproj">
       <Project>{E0E17B12-CF0B-D472-0ED3-444A91455198}</Project>
       <Name>uLipSync.Samples.Animator.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Bunny83.simpleJson.csproj">
+      <Project>{A6AF85C0-E104-00B4-5E98-C5890735A266}</Project>
+      <Name>Bunny83.simpleJson</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
