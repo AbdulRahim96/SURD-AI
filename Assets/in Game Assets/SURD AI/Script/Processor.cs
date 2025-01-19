@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class Processor : MonoBehaviour
 {
+    public string verbalResponse;
     public string actionKey;
     public Transform target;
     // Start is called before the first frame update
     
 
-    public Processor(string[] words, ActionHandler actionHandler, Interactables interactables)
+    public Processor(SURD_AI.ResponseData response, Interactables interactables)
     {
-        foreach (var word in words)
+        /* foreach (var word in words)
+         {
+             if(actionHandler.Check(word) == true)
+             {
+                 actionKey = word;
+                 break;
+             }
+         }*/
+        verbalResponse = response.verbal_Response;
+
+        if (response.actions.Length == 0) return;
+        actionKey = response.actions[0];
+
+        if (response.entities.Length == 0) return;
+        int index = interactables.Check(response.entities[0]);
+        if (index != -1)
         {
-            if(actionHandler.Check(word) == true)
-            {
-                actionKey = word;
-                break;
-            }
-        }
-        foreach (var word in words)
-        {
-            int index = interactables.Check(word);
-            if (index != -1)
-            {
-                target = interactables.GetTarget(index);
-            }
+            target = interactables.GetTarget(index);
         }
     }
 }

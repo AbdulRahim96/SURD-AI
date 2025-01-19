@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class ActionHandler : MonoBehaviour
 {
-    public Agent agent;
+    private Agent agent;
     public Actions[] actions;
 
+    private void Awake()
+    {
+        agent = GetComponent<Agent>();
+    }
     public bool Check(string word)
     {
         foreach (var item in actions)
