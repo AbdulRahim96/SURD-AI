@@ -16,7 +16,7 @@ MonoBehaviour:
     supportShadowMask: 0
     supportSSR: 0
     supportSSRTransparent: 0
-    supportSSAO: 1
+    supportSSAO: 0
     supportSSGI: 0
     supportSubsurfaceScattering: 1
     sssSampleBudget:
@@ -29,12 +29,12 @@ MonoBehaviour:
         m_Id: With3Levels
     supportVolumetrics: 0
     supportVolumetricClouds: 0
-    supportLightLayers: 1
+    supportLightLayers: 0
     renderingLayerMaskBuffer: 0
     supportWater: 0
     waterSimulationResolution: 128
     supportWaterExclusion: 0
-    supportWaterDecals: 1
+    supportWaterDecals: 0
     waterDecalAtlasSize: 1024
     maximumWaterDecalCount: 48
     waterScriptInteractionsMode: 0
@@ -45,11 +45,11 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 0
     supportDistortion: 1
-    supportTransparentBackface: 1
-    supportTransparentDepthPrepass: 1
-    supportTransparentDepthPostpass: 1
+    supportTransparentBackface: 0
+    supportTransparentDepthPrepass: 0
+    supportTransparentDepthPostpass: 0
     colorBufferFormat: 74
-    supportCustomPass: 1
+    supportCustomPass: 0
     customBufferFormat: 12
     supportedLitShaderMode: 2
     planarReflectionResolution:
@@ -67,9 +67,9 @@ MonoBehaviour:
     supportHighQualityLineRendering: 0
     highQualityLineRenderingMemoryBudget: 128
     msaaSampleCount: 1
-    supportMotionVectors: 1
-    supportScreenSpaceLensFlare: 1
-    supportDataDrivenLensFlare: 1
+    supportMotionVectors: 0
+    supportScreenSpaceLensFlare: 0
+    supportDataDrivenLensFlare: 0
     supportDitheringCrossFade: 1
     supportRuntimeAOVAPI: 0
     supportTerrainHole: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
       maxDecalsOnScreen: 512
       maxLightsPerClusterCell: 16
       maxLocalVolumetricFogSize: 32
-      maxLocalVolumetricFogOnScreen: 64
+      maxLocalVolumetricFogOnScreen: 1
     hdShadowInitParams:
       maxShadowRequests: 128
       directionalShadowsDepthBits: 16
@@ -196,8 +196,8 @@ MonoBehaviour:
       checkerboardDepthBuffer: 1
       upsampleType: 1
     xrSettings:
-      singlePass: 1
-      occlusionMesh: 1
+      singlePass: 0
+      occlusionMesh: 0
       cameraJitter: 0
       allowMotionBlur: 0
     postProcessQualitySettings:
@@ -220,10 +220,10 @@ MonoBehaviour:
       - 2
       LimitManualRangeNearBlur: 000000
       MotionBlurSampleCount: 04000000080000000c000000
-      BloomRes: 040000000200000002000000
-      BloomHighQualityFiltering: 000101
-      BloomHighQualityPrefiltering: 000001
-      ChromaticAberrationMaxSamples: 03000000060000000c000000
+      BloomRes: 040000000200000004000000
+      BloomHighQualityFiltering: 000000
+      BloomHighQualityPrefiltering: 000000
+      ChromaticAberrationMaxSamples: 03000000060000000a000000
     lightSettings:
       useContactShadow:
         m_Values: 000101
@@ -338,7 +338,7 @@ MonoBehaviour:
   availableMaterialQualityLevels: -1
   m_DefaultMaterialQualityLevel: 4
   diffusionProfileSettings: {fileID: 0}
-  m_VolumeProfile: {fileID: 0}
+  m_VolumeProfile: {fileID: 11400000, guid: ee91ec25796f7cd4ba525ac44c01880b, type: 2}
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256
     streamingMipPreloadTexturesPerFrame: 0
