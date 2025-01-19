@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: e4bb494b588def6479da125a8dc6dab8
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _SandGrunge: {fileID: 2800000, guid: 85a9d3890305fd1469e97b9bf61f6973, type: 3}
+  - _Sand1_Basecolor: {instanceID: 0}
+  - _Sand2_Basecolor: {instanceID: 0}
+  - _Sand1_Normal: {fileID: 2800000, guid: d4f91167f15bef3449aace411d2ddeb7, type: 3}
+  - _Sand2_Normal: {fileID: 2800000, guid: d4f91167f15bef3449aace411d2ddeb7, type: 3}
+  - _Sand1_SmoothnessA: {fileID: 2800000, guid: 3a3694da791ab9e40ba52aef3122b8bb,
+      type: 3}
+  - _Sand2_Smoothness: {fileID: 2800000, guid: 3a3694da791ab9e40ba52aef3122b8bb, type: 3}
+  - _texcoord: {instanceID: 0}
+  nonModifiableTextures: []
+  preprocessorOverride: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
