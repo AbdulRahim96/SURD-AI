@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float gravity = Physics.gravity.y;
     private Vector3 oldPos;
+    [SerializeField]
     private bool crouch = true;
     private bool freezMovement = false;
     private float radius;
@@ -59,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             Movement();
             AnimatorSystem();
             if (!isReload) {
-                if (Input.GetMouseButton(0) && usingGun.CheckAmo() && !isReload) {
+                if (Input.GetMouseButton(0) && usingGun.CheckAmo()) {
                     usingGun.Shoot();
                 }
             }
@@ -94,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // Sprint
         if (Input.GetKey(KeyCode.LeftShift) && movement == Vector3.zero){
             speed = Mathf.Lerp(speed, runSpeed, Time.deltaTime * 5f);
             moveDirection = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * Vector3.forward * speed;
@@ -113,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isReload)
         {
-            if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift) && controller.isGrounded)
+            if (movement != Vector3.zero && Input.GetKeyDown(KeyCode.LeftShift) && controller.isGrounded)
             {
                 StartCoroutine(FlipForward(1.633f / 2f));
             }
@@ -241,7 +244,14 @@ public class PlayerMovement : MonoBehaviour
         freezMovement = true;
         speed = 6;
         controller.radius = 1f;
-        moveDirection = transform.forward * speed;
+        moveDirection *= 3;
+        // Calculate the target angle on the Y-axis
+        float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+
+        // Set the Y-axis rotation instantly
+        transform.GetChild(0).eulerAngles = new Vector3(transform.eulerAngles.x, targetAngle, transform.eulerAngles.z);
+
+        transform.GetChild(0).DOLocalRotate(Vector3.zero, duration).SetEase(Ease.InExpo);
         yield return new WaitForSeconds(duration);
         controller.radius = radius;
         moveDirection = Vector3.zero;
