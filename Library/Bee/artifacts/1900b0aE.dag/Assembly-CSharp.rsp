@@ -383,6 +383,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Autodesk.Fbx.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Autodesk.Fbx.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Bunny83.simpleJson.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Microsoft.MixedReality.Toolkit.TextToSpeech.Windows.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/soupday.cc3_unity_tools.editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/soupday.cc3_unity_tools.runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/uLipSync.Editor.ref.dll"

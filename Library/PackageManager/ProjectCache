@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638734799758762785
-    m_Hash: 4108343090
+      ticks: 638734800419959969
+    m_Hash: 3478251657
   m_LockFileStatus:
     m_FilePath: D:/Unity Projects/SURD-AI/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638734799758829709
-    m_Hash: 3132065612
+      ticks: 638734800419995204
+    m_Hash: 3692961378
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,77 @@ m_LocalPackages:
 m_ProjectPath: D:/Unity Projects/SURD-AI/Packages
 m_EditorVersion: 6000.0.30f1 (62b05ba0686a)
 m_ResolvedPackages:
+- packageId: com.microsoft.mrtk.tts.windows@1.0.4
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.4
+  source: 1
+  resolvedPath: D:\Unity Projects\SURD-AI\Library\PackageCache\com.microsoft.mrtk.tts.windows
+  assetPath: Packages/com.microsoft.mrtk.tts.windows
+  name: com.microsoft.mrtk.tts.windows
+  displayName: MRTK Windows Text-to-Speech Plugin
+  author:
+    name: Microsoft
+    email: 
+    url: 
+  category: 
+  type: 
+  description: Enables synthesizing text phrases into audio in standalone Windows
+    projects.
+  errors: []
+  versions:
+    all:
+    - 1.0.4
+    compatible:
+    - 1.0.4
+    recommended: 
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - mrtk
+  - microsoft
+  - text to speech
+  - tts
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 2
+  isAssetStorePackage: 1
+  datePublishedTicks: 638418637980000000
+  documentationUrl: https://aka.ms/mrtk3winspeechapi
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/mixed-reality-microsoft/hololens.developer.experiences.git
+    revision: aee60f04f77312ec33673bbc87e34de80b3bc250
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 275109
+  fingerprint: f3658eaefe3fa8d51d7ed1829b5f3698bbe0e0d2
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.4
+    minimumUnityVersion: 2021.3.26f1
 - packageId: com.unity.animation.rigging@1.3.0
   testable: 0
   isDirectDependency: 1

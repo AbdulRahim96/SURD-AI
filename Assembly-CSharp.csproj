@@ -1386,6 +1386,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.MixedReality.Toolkit.TextToSpeech.Windows">
+      <HintPath>Library\ScriptAssemblies\Microsoft.MixedReality.Toolkit.TextToSpeech.Windows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
       <Private>False</Private>
