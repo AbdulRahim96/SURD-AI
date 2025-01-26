@@ -15,6 +15,7 @@ public class PlayerCameraSystem : MonoBehaviour
     public Transform aimTransform;
     public Transform cameraAimTransform;
     public Transform dynamicCamera;
+    public float range = 100;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class PlayerCameraSystem : MonoBehaviour
         cameraTransform.LookAt(cameraAimTransform.position);
 
         RaycastHit hit;
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 100f))
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, range))
         {
             float distance = Vector3.Distance(cameraTransform.position, hit.point);
             if (distance >= (cameraDystance + 1f))
@@ -36,7 +37,7 @@ public class PlayerCameraSystem : MonoBehaviour
                 aimTransform.position = Vector3.Lerp(aimTransform.position, hit.point, Time.deltaTime * 10f);
             }
             else {
-                aimTransform.position = cameraTransform.forward * 100f;
+                aimTransform.position = cameraTransform.position + cameraTransform.forward * range;
 
             }
            // aimTransform.position = hit.point;
@@ -44,7 +45,7 @@ public class PlayerCameraSystem : MonoBehaviour
 
         }
         else {
-            aimTransform.position = cameraTransform.forward * 100f;
+            aimTransform.position = cameraTransform.position + cameraTransform.forward * range;
         }
 
         if (Physics.Raycast(dynamicCamera.position, -dynamicCamera.forward, out hit, cameraDystance))

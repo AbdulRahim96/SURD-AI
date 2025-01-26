@@ -159,6 +159,7 @@ public class SURD_AI : MonoBehaviour
         public string[] actions;
         public string[] entities;
         public string verbal_Response;
+        public string final_Response;
     }
 
 }
