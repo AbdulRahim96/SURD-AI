@@ -28,6 +28,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
 /// <summary>
@@ -42,6 +43,8 @@ public class VoiceProcessor : MonoBehaviour
     {
         get { return _audioClip != null && Microphone.IsRecording(CurrentDeviceName); }
     }
+
+    public bool currentRecording;
 
     [SerializeField] private int MicrophoneIndex;
 
@@ -94,7 +97,7 @@ public class VoiceProcessor : MonoBehaviour
     }
 
     [Header("Voice Detection Settings")]
-    [SerializeField, Tooltip("The minimum volume to detect voice input for"), Range(0.0f, 1.0f)]
+    [SerializeField, Tooltip("The minimum volume to detect voice input for")]
     private float _minimumSpeakingSampleValue = 0.05f;
 
     [SerializeField, Tooltip("Time in seconds of detected silence before voice request is sent")]
@@ -107,7 +110,7 @@ public class VoiceProcessor : MonoBehaviour
     private bool _audioDetected;
     private bool _didDetect;
     private bool _transmit;
-
+    public float maxVolume = 0;
 
     AudioClip _audioClip;
     private event Action RestartRecording;
@@ -123,6 +126,8 @@ public class VoiceProcessor : MonoBehaviour
         {
             ChangeDevice(MicrophoneIndex);
         }
+
+        currentRecording = IsRecording;
     }
 #endif
 
@@ -181,7 +186,7 @@ public class VoiceProcessor : MonoBehaviour
     /// <param name="sampleRate">Sample rate to record at</param>
     /// <param name="frameSize">Size of audio frames to be delivered</param>
     /// <param name="autoDetect">Should the audio continuously record based on the volume</param>
-    public void StartRecording(int sampleRate = 16000, int frameSize = 512, bool ?autoDetect = null)
+    public void StartRecording(int sampleRate = 16000, int frameSize = 64, bool ?autoDetect = null)
     {
         if (autoDetect != null)
         {
@@ -217,16 +222,62 @@ public class VoiceProcessor : MonoBehaviour
     /// </summary>
     public void StopRecording()
     {
+        /*  if (!IsRecording)
+              return;
+
+          Microphone.End(CurrentDeviceName);
+          Destroy(_audioClip);
+          _audioClip = null;
+          _didDetect = false;
+
+          StopCoroutine(RecordData());*/
+
         if (!IsRecording)
             return;
 
         Microphone.End(CurrentDeviceName);
+
+        if (_audioClip != null)
+        {
+            ProcessRecordedAudio(_audioClip); // Process the recorded audio
+        }
+
         Destroy(_audioClip);
         _audioClip = null;
         _didDetect = false;
 
         StopCoroutine(RecordData());
+
+        if (OnRecordingStop != null)
+            OnRecordingStop.Invoke();
     }
+
+    /// <summary>
+    /// Process the recorded audio after recording stops.
+    /// </summary>
+    /// <param name="audioClip">The recorded audio clip</param>
+    private void ProcessRecordedAudio(AudioClip audioClip)
+    {
+        Debug.Log("Processing recorded voice input...");
+
+        // Convert AudioClip to PCM data
+        float[] samples = new float[audioClip.samples];
+        audioClip.GetData(samples, 0);
+
+        // Convert float PCM to 16-bit integer PCM for Vosk (if needed)
+        short[] pcmData = new short[samples.Length];
+        for (int i = 0; i < samples.Length; i++)
+        {
+            pcmData[i] = (short)(samples[i] * short.MaxValue);
+        }
+
+        // Send PCM data to Vosk (or any speech recognition engine)
+        if (OnFrameCaptured != null)
+        {
+            OnFrameCaptured.Invoke(pcmData);
+        }
+    }
+
 
     /// <summary>
     /// Loop for buffering incoming audio data and delivering frames
@@ -282,7 +333,7 @@ public class VoiceProcessor : MonoBehaviour
             }
             else
             {
-                float maxVolume = 0.0f;
+                maxVolume = 0.0f;
 
                 for (int i = 0; i < sampleBuffer.Length; i++)
                 {
@@ -296,6 +347,7 @@ public class VoiceProcessor : MonoBehaviour
                 {
                     _transmit= _audioDetected = true;
                     _timeAtSilenceBegan = Time.time;
+                    print("voice recognized");
                 }
                 else
                 {
@@ -303,6 +355,7 @@ public class VoiceProcessor : MonoBehaviour
 
                     if (_audioDetected && Time.time - _timeAtSilenceBegan > _silenceTimer)
                     {
+                        print("voice stopped recording by silce timer");
                         _audioDetected = false;
                     }
                 }
@@ -321,6 +374,8 @@ public class VoiceProcessor : MonoBehaviour
                 // raise buffer event
                 if (OnFrameCaptured != null && _transmit)
                     OnFrameCaptured.Invoke(pcmBuffer);
+
+                print("Line 328");
             }
             else
             {
@@ -331,8 +386,14 @@ public class VoiceProcessor : MonoBehaviour
                     _didDetect = false;
                 }
             }
+
+            print("isRecording " + IsRecording);
         }
 
+        print("_audioDetected " + _audioDetected);
+        print("_transmit " + _transmit);
+        print("OnRecordingStop " + OnRecordingStop);
+        print("RestartRecording " + RestartRecording);
 
         if (OnRecordingStop != null)
             OnRecordingStop.Invoke();

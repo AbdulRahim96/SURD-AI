@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class VoskDialogText : MonoBehaviour 
 {
     public VoskSpeechToText VoskSpeechToText;
+	[TextArea(10,10)]
     public string DialogText;
 
     void Awake()
@@ -15,7 +16,7 @@ public class VoskDialogText : MonoBehaviour
     {
 		// Save to file
 
-        Debug.Log(obj);
+        Debug.Log("from action callback:  " + obj);
         var result = new RecognitionResult(obj);
 		print("Best Result: " + result.Phrases[0].Text);
 		DialogText += result.Phrases[0].Text + " ";

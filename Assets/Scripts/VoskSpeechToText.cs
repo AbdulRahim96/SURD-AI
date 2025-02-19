@@ -282,12 +282,13 @@ public class VoskSpeechToText : MonoBehaviour
 		if (_threadedResultQueue.TryDequeue(out string voiceResult))
 		{
 		    OnTranscriptionResult?.Invoke(voiceResult);
+			print("Finish: " + voiceResult);
 		}
 
-		if (Input.GetKeyDown(key))
+		/*if (Input.GetKeyDown(key))
 			ToggleRecording();
 		if (Input.GetKeyUp(key))
-			StopRecording(1);
+            ToggleRecording();*/
 
     }
 

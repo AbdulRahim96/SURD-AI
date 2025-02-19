@@ -42,12 +42,12 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpOver = false;
     public Gun usingGun;
 
-
+    public bool AI;
     void Awake(){
         controller = GetComponent<CharacterController>();
         Hcamera = cameraPack.GetChild(0);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+      //  Cursor.visible = false;
+      //  Cursor.lockState = CursorLockMode.Locked;
         radius = controller.radius;
         height = controller.height;
     }
@@ -56,7 +56,10 @@ public class PlayerMovement : MonoBehaviour
         oldPos = new Vector3(transform.position.x, 0f, transform.position.z);
     }
 
-    void LateUpdate(){
+    void LateUpdate()
+    {
+        if (AI) return;
+
         if (!freezMovement){
             Movement();
             AnimatorSystem();
@@ -235,6 +238,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+    
 
     IEnumerator FlipForward(float duration)
     {

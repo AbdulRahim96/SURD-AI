@@ -20,6 +20,10 @@ public class Rifle : Gun
         {
             StartCoroutine(ShootCoroutine(fireRate));
         }
+        else if (allAmo > 0)
+        {
+            // reload
+        }
 
     }
 

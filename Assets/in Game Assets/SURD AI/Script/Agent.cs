@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,26 +12,31 @@ public class Agent : MonoBehaviour
     public ParticleSystem shootingParticle;
     public Transform target;
     public State currentState, requiredAction;
-
-    private NavMeshAgent agent;
-    private Animator animator;
-
+    public NavMeshAgent agent;
+    public float moveSpeed;
+    public Animator animator;
+    public Transform rightHand;
     public Text verbalText;
-
+    private float currentSpeed;
     public enum State
     {
         None,
         Moving,
         Attacking,
         pickup
-
     }
 
     private bool isRepeating;
+    private PlayerMovement controller;
+    public bool AI;
+    private void Awake()
+    {
+        controller = GetComponent<PlayerMovement>();
+    }
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+       // agent = GetComponent<NavMeshAgent>();
+       // animator = GetComponent<Animator>();
     }
 
     public void Apply(string functionName, Transform target = null)
@@ -43,10 +49,8 @@ public class Agent : MonoBehaviour
 
     private void Move()
     {
-        print("moving");
-        GetComponent<NavMeshAgent>().SetDestination(target.position);
-        animator.SetBool("moving", true);
-        animator.SetBool("attacking", false);
+        agent.SetDestination(target.position);
+        moveSpeed = 1;
     }
 
 
@@ -58,8 +62,26 @@ public class Agent : MonoBehaviour
        // target.GetComponent<MeshRenderer>().material.color = Color.red;
     }
 
+    public void SetAI(bool ai)
+    {
+        AI = ai;
+        controller.AI = AI;
+    }
+
+    private async Task pickingUp()
+    {
+        animator.SetTrigger("pickup");
+        await Task.Delay(4);
+        target.SetParent(rightHand);
+        target.localPosition = Vector3.zero;
+    }
+
     void FixedUpdate()
     {
+        if (!AI) return;
+        currentSpeed = Mathf.Lerp(currentSpeed, moveSpeed, Time.deltaTime * 3);
+        animator.SetFloat("MoveZ", currentSpeed);
+
         switch (currentState)
         {
             case State.Moving:
@@ -71,7 +93,7 @@ public class Agent : MonoBehaviour
                     }
                     else if (requiredAction == State.pickup)
                     {
-                        animator.SetTrigger("pickup");
+                        pickingUp();
                         Idle();
                     }
                     else
@@ -112,9 +134,9 @@ public class Agent : MonoBehaviour
     private void Fire()
     {
         if (isRepeating) return;
-        print("shooting");
-        animator.SetBool("moving", false);
-        animator.SetBool("attacking", true);
+
+        moveSpeed = 0;
+        animator.SetBool("Shoot", true);
         // Aim at target
         transform.LookAt(target);
 
@@ -127,8 +149,8 @@ public class Agent : MonoBehaviour
     {
         currentState = State.None;
         requiredAction = State.None;
-        animator.SetBool("moving", false);
-        animator.SetBool("attacking", false);
+        moveSpeed = 0;
+        animator.SetBool("Shoot", false);
         agent.stoppingDistance = 5;
         shootingParticle.Stop();
         isRepeating = false;
@@ -152,6 +174,7 @@ public class Agent : MonoBehaviour
     {
         requiredAction = State.Attacking;
         currentState = State.Moving;
+        agent.stoppingDistance = 5;
     }
 
     #endregion

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class IO_Manager : MonoBehaviour
     public Text subtitleText;
     public bool isTesting;
     public string testinput;
-
+    public VoskSpeechToText voiceInput;
 
     public Agent currentActiveAgent;
     [TextArea(1, 5)]
@@ -19,6 +20,11 @@ public class IO_Manager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        voiceInput.OnTranscriptionResult += onVoiceComplete;
     }
     public void UpdateSentence(string str)
     {
@@ -91,4 +97,12 @@ public class IO_Manager : MonoBehaviour
         StartProcess();
     }
 
+
+    private void onVoiceComplete(string dialogues)
+    {
+        var result = new RecognitionResult(dialogues);
+        print("Best Result: " + result.Phrases[0].Text);
+        string str = result.Phrases[0].Text;
+        UserInput(str);
+    }
 }

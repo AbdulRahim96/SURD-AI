@@ -453,6 +453,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.30f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/AIController.cs"
 "Assets/BulletDamage.cs"
 "Assets/EffectExamples/Shared/Scripts/DecalDestroyer.cs"
 "Assets/EffectExamples/Shared/Scripts/ExtinguishableFire.cs"
@@ -622,6 +623,12 @@
 "Assets/ThirdParty/Vosk/VoskPINVOKE.cs"
 "Assets/ThirdParty/Vosk/VoskRecognizer.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
+"Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Scripts/SpawnEffect.cs"
+"Assets/UnityTechnologies/ParticlePack/Shared/Ramps/Runtime/RampAsset.cs"
+"Assets/UnityTechnologies/ParticlePack/Shared/Scripts/AdjustTimeScale.cs"
+"Assets/UnityTechnologies/ParticlePack/Shared/Scripts/ProximityActivate.cs"
+"Assets/UnityTechnologies/ParticlePack/Shared/Scripts/SimpleCameraController.cs"
+"Assets/UnityTechnologies/ParticlePack/Shared/Scripts/SimpleCharacterMotor.cs"
 -langversion:9.0
 /unsafe+
 /deterministic
