@@ -577,6 +577,7 @@
 "Assets/in Game Assets/SURD AI/Script/IO_Manager.cs"
 "Assets/in Game Assets/SURD AI/Script/Processor.cs"
 "Assets/in Game Assets/SURD AI/SURD_AI.cs"
+"Assets/InputFieldScript.cs"
 "Assets/Invector-3rdPersonController_LITE/3D Models/Others/HealthItem/vAnimateUV.cs"
 "Assets/Invector-3rdPersonController_LITE/Scripts/Camera/vThirdPersonCamera.cs"
 "Assets/Invector-3rdPersonController_LITE/Scripts/CharacterController/vThirdPersonAnimator.cs"
@@ -634,6 +635,7 @@
 "Assets/UnityTechnologies/ParticlePack/Shared/Scripts/ProximityActivate.cs"
 "Assets/UnityTechnologies/ParticlePack/Shared/Scripts/SimpleCameraController.cs"
 "Assets/UnityTechnologies/ParticlePack/Shared/Scripts/SimpleCharacterMotor.cs"
+"Assets/VoiceIcon.cs"
 -langversion:9.0
 /unsafe+
 /deterministic

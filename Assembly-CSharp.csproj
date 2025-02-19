@@ -70,6 +70,7 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_StepFurther.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA.CustomIKSupport.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_EdgeStepDetector.cs" />
+    <Compile Include="Assets\VoiceIcon.cs" />
     <Compile Include="Assets\Libraries\DLLManipulator\scripts\NativeFunctionSignature.cs" />
     <Compile Include="Assets\Libraries\DLLManipulator\scripts\DllManipulatorScript.cs" />
     <Compile Include="Assets\Libraries\DLLManipulator\scripts\IlGeneratorExtensions.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Animating Help\AnimationGenerateUtils.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\Glueing Helpers\LegsA.Glue.Conditions.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vPickupItem.cs" />
+    <Compile Include="Assets\InputFieldScript.cs" />
     <Compile Include="Assets\Scripts\RecognitionResult.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.Bone.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_AutoGroundAlignBodyMatrix.cs" />

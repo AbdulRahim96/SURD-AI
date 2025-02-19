@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isReload = false;
     private bool jumpOver = false;
     public Gun usingGun;
-
+    public static bool enableControls = true;
     public bool AI;
     void Awake(){
         controller = GetComponent<CharacterController>();
@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
       //  Cursor.lockState = CursorLockMode.Locked;
         radius = controller.radius;
         height = controller.height;
+        enableControls = true;
     }
     void Start(){
         speed = walkSpeed;
@@ -59,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     void LateUpdate()
     {
         if (AI) return;
-
+        if (!enableControls) return;
         if (!freezMovement){
             Movement();
             AnimatorSystem();

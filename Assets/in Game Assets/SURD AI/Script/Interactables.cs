@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,9 @@ using UnityEngine;
 public class Interactables : MonoBehaviour
 {
     public static Interactables instance;
-    public Object[] _objects;
+    public List<Object> _objects;
+
+    
 
     private void Awake()
     {
@@ -13,7 +16,7 @@ public class Interactables : MonoBehaviour
     }
     public int Check(string word)
     {
-        for (int i = 0; i < _objects.Length; i++)
+        for (int i = 0; i < _objects.Count; i++)
         {
             if (word.ToLower() == _objects[i].objectName.ToLower())
                 return i;
@@ -26,11 +29,36 @@ public class Interactables : MonoBehaviour
         return _objects[index].target;
     }
 
+
+    public void AddItem(string name, string description, Transform target)
+    {
+        Object newItem = new Object(name, description, target);
+        _objects.Add(newItem);
+    }
+    public void RemoveItem(Transform obj)
+    {
+        for (int i = 0; i < _objects.Count; i++)
+        {
+            if (_objects[i].target == obj)
+            {
+                _objects.Remove(_objects[i]);
+                return;
+            }
+        }
+    }
+
     [System.Serializable]
     public class Object
     {
         public string objectName;
         public string description;
         public Transform target;
+
+        public Object(string objectName, string description, Transform target)
+        {
+            this.objectName = objectName;
+            this.description = description;
+            this.target = target;
+        }
     }
 }

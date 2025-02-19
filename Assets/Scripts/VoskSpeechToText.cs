@@ -70,6 +70,8 @@ public class VoskSpeechToText : MonoBehaviour
 	//Flag that is used to check if Vosk was started.
 	private bool _didInit;
 
+	private bool requestToStop = false;
+
 	//Threading Logic
 
 	// Flag to signal we are ending
@@ -265,14 +267,13 @@ public class VoskSpeechToText : MonoBehaviour
 		{
 			Debug.Log("Start Recording");
 			_running = true;
+			requestToStop = false;
 			VoiceProcessor.StartRecording();
     	    Task.Run(ThreadedWork).ConfigureAwait(false);
 		}
 		else
 		{
-			Debug.Log("Stop Recording");
-			_running = false;
-			VoiceProcessor.StopRecording();
+			requestToStop = true;
 		}
 	}
 
@@ -283,25 +284,23 @@ public class VoskSpeechToText : MonoBehaviour
 		{
 		    OnTranscriptionResult?.Invoke(voiceResult);
 			print("Finish: " + voiceResult);
-		}
 
-		/*if (Input.GetKeyDown(key))
+            if (requestToStop)
+            {
+                Debug.Log("Stopping Recording after output...");
+                _running = false;
+                VoiceProcessor.StopRecording();
+            }
+        }
+
+		if (!PlayerMovement.enableControls) return;
+
+        if (Input.GetKeyDown(key))
 			ToggleRecording();
 		if (Input.GetKeyUp(key))
-            ToggleRecording();*/
+            ToggleRecording();
 
     }
-
-	async Task StopRecording(int delay)
-	{
-		await Task.Delay(delay * 1000);
-		ToggleRecording();
-		if(dialogText)
-		{
-			IO_Manager.instance.UserInput(dialogText.DialogText);
-			dialogText.DialogText = "";
-		}
-	}
 
 	//Callback from the voice processor when new audio is detected
 	private void VoiceProcessorOnOnFrameCaptured(short[] samples)
@@ -312,11 +311,58 @@ public class VoskSpeechToText : MonoBehaviour
 	//Callback from the voice processor when recording stops
 	private void VoiceProcessorOnOnRecordingStop()
 	{
-                Debug.Log("Stopped");
-	}
+        Debug.Log("Recording Stopped. Processing speech now...");
 
-	//Feeds the autio logic into the vosk recorgnizer
-	private async Task ThreadedWork()
+        // Stop recording safely
+        _running = false;
+
+        if (_recognizer == null)
+        {
+            Debug.LogError("Recognizer is null. Skipping speech processing.");
+            return;
+        }
+
+        // Process speech in the background
+        Task.Run(async () => await ProcessSpeechAfterRecording());
+    }
+
+    private async Task ProcessSpeechAfterRecording()
+    {
+        Debug.Log("Processing speech from recorded audio...");
+
+        if (_recognizer == null)
+        {
+            Debug.LogError("Recognizer is null. Cannot process speech.");
+            return;
+        }
+
+        // Ensure no other processing is running
+        lock (_recognizer)
+        {
+            try
+            {
+                while (_threadedBufferQueue.TryDequeue(out short[] voiceResult))
+                {
+                    if (_recognizer.AcceptWaveform(voiceResult, voiceResult.Length))
+                    {
+                        string result = _recognizer.FinalResult();
+                        _threadedResultQueue.Enqueue(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error while processing speech: " + ex.Message);
+            }
+        }
+
+        Debug.Log("Speech processing finished.");
+    }
+
+
+
+    //Feeds the autio logic into the vosk recorgnizer
+    private async Task ThreadedWork()
 	{
 		voskRecognizerCreateMarker.Begin();
 		if (!_recognizerReady)

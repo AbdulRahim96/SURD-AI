@@ -7,11 +7,12 @@ public class VoskDialogText : MonoBehaviour
     public string DialogText;
 	public Transform content;
 	public Text textPrefab;
-
+	int count;
 
     void Awake()
     {
         VoskSpeechToText.OnTranscriptionResult += OnTranscriptionResult;
+		count = 1;
     }
 
     private void OnTranscriptionResult(string obj)
@@ -153,7 +154,8 @@ public class VoskDialogText : MonoBehaviour
 	private void Display()
 	{
 		Text text = Instantiate(textPrefab, content);
-		text.text = DialogText;
+		text.text = count + ". " + DialogText;
+		count++;
 	}
 
 }
