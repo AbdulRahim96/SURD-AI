@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    private float currentHealth;
+    [SerializeField] private float currentHealth;
     public float maxHealth;
+    public LayerMask attackableLayer;
+    public UnityEvent dieEvent;
 
     public void Awake()
     {
@@ -15,7 +18,7 @@ public class Health : MonoBehaviour
         currentHealth += damage;
         if(currentHealth <= 0)
         {
-            Destroy(gameObject);
+            dieEvent.Invoke();
         }
     }
 }

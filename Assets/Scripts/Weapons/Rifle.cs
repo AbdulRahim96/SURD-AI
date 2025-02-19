@@ -77,6 +77,7 @@ public class Rifle : Gun
                 case "Enemy":
                     holePrefab = shootHoles[1];
                     crosshair.HitEnemy();
+                    hit.transform.GetComponent<Health>().TakeDamage(-10);
                     break;
                 case "InvisibleWall":
                     break;
@@ -84,6 +85,8 @@ public class Rifle : Gun
                     holePrefab = shootHoles[0];
                     break;
             }
+
+
             if (holePrefab)
             {
                 GameObject hole = Instantiate(holePrefab, hit.point, Quaternion.LookRotation(hit.normal));

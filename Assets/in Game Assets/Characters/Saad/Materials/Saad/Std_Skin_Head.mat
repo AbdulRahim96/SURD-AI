@@ -180,10 +180,10 @@ Material:
     - _BSmoothnessMod: 0.101
     - _BlendMode: 0
     - _CheekScatterScale: 1
-    - _CheekSmoothnessMod: 0
+    - _CheekSmoothnessMod: 0.31
     - _ChinScatterScale: 1
     - _ChinSmoothnessMod: 0
-    - _ColorBlendStrength: 0
+    - _ColorBlendStrength: 1
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
     - _CullModeForward: 2
@@ -195,30 +195,30 @@ Material:
     - _DstBlend: 0
     - _DstBlend2: 0
     - _EarScatterScale: 1
-    - _EarSmoothnessMod: 0
+    - _EarSmoothnessMod: -0.5
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
     - _ForeheadScatterScale: 1
-    - _ForeheadSmoothnessMod: 0
+    - _ForeheadSmoothnessMod: 0.44
     - _GScatterScale: 1
-    - _GSmoothnessMod: -0.07
+    - _GSmoothnessMod: -0.26
     - _LipsCavityAO: 2.5
     - _MaterialID: 0
     - _MaterialTypeMask: 1
-    - _MicroNormalStrength: 0.71
-    - _MicroNormalTiling: 20
-    - _MicroSmoothnessMod: -0.055
-    - _MouthCavityAO: 2.5
+    - _MicroNormalStrength: 0.605
+    - _MicroNormalTiling: 8.5
+    - _MicroSmoothnessMod: -1.5
+    - _MouthCavityAO: 1.85
     - _NeckScatterScale: 1
     - _NeckSmoothnessMod: 0
-    - _NormalBlendStrength: 0
+    - _NormalBlendStrength: 0.454
     - _NormalStrength: 1
     - _NostrilCavityAO: 3.5
     - _OpaqueCullMode: 2
     - _PerPixelSorting: 0
     - _RScatterScale: 1
-    - _RSmoothnessMod: 0.009
+    - _RSmoothnessMod: 0.09
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
@@ -239,11 +239,11 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 15
     - _StencilWriteMaskMV: 41
-    - _SubsurfaceScale: 0
+    - _SubsurfaceScale: 0.368
     - _SupportDecals: 1
     - _SurfaceType: 0
-    - _ThicknessScale: 0
-    - _ThicknessScaleMin: 0
+    - _ThicknessScale: 1
+    - _ThicknessScaleMin: 1
     - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -252,10 +252,10 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
-    - _UnmaskedScatterScale: 1
+    - _UnmaskedScatterScale: 1.055
     - _UnmaskedSmoothnessMod: 0
     - _UpperLipScatterScale: 1
-    - _UpperLipSmoothnessMod: 0
+    - _UpperLipSmoothnessMod: 0.1
     - _UseShadowThreshold: 0
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4

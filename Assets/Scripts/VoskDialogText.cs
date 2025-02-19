@@ -4,8 +4,10 @@ using UnityEngine.UI;
 public class VoskDialogText : MonoBehaviour 
 {
     public VoskSpeechToText VoskSpeechToText;
-	[TextArea(10,10)]
     public string DialogText;
+	public Transform content;
+	public Text textPrefab;
+
 
     void Awake()
     {
@@ -19,7 +21,8 @@ public class VoskDialogText : MonoBehaviour
         Debug.Log("from action callback:  " + obj);
         var result = new RecognitionResult(obj);
 		print("Best Result: " + result.Phrases[0].Text);
-		DialogText += result.Phrases[0].Text + " ";
+		DialogText = result.Phrases[0].Text;
+		Display();
         /*
         var result = new RecognitionResult(obj);
         foreach (RecognizedPhrase p in result.Phrases)
@@ -146,5 +149,11 @@ public class VoskDialogText : MonoBehaviour
 			AddResponse("я тебя не понимаю");
 		}*/
     }
+
+	private void Display()
+	{
+		Text text = Instantiate(textPrefab, content);
+		text.text = DialogText;
+	}
 
 }
