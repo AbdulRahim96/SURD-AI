@@ -23,13 +23,15 @@ public class ActionHandler : MonoBehaviour
 
     public void DoAction(Processor processor)
     {
-        foreach (var item in actions)
+        agent.Apply(processor.actionKey, processor.target);
+
+        /*foreach (var item in actions)
         {
             if(processor.actionKey == item.actionName)
             {
                 agent.Apply(processor.actionKey, processor.target);
             }
-        }
+        }*/
     }
 
     [System.Serializable]

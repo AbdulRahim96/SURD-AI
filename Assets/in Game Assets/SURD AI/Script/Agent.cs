@@ -33,49 +33,6 @@ public class Agent : MonoBehaviour
     {
         controller = GetComponent<PlayerMovement>();
     }
-    private void Start()
-    {
-       // agent = GetComponent<NavMeshAgent>();
-       // animator = GetComponent<Animator>();
-    }
-
-    public void Apply(string functionName, Transform target = null)
-    {
-        SetTarget(target);
-        Invoke(functionName, 0);
-
-       // InputManager.instance.AgentRespondText(functionName + " =>> " + target.name);
-    }
-
-    private void Move()
-    {
-        agent.SetDestination(target.position);
-        moveSpeed = 1;
-    }
-
-
-    private void SetTarget(Transform t)
-    {
-        target = t;
-
-        // Turn the target Object into red color
-       // target.GetComponent<MeshRenderer>().material.color = Color.red;
-    }
-
-    public void SetAI(bool ai)
-    {
-        AI = ai;
-        controller.AI = AI;
-    }
-
-    private async Task pickingUp()
-    {
-        animator.SetTrigger("pickup");
-        await Task.Delay(4);
-        target.SetParent(rightHand);
-        target.localPosition = Vector3.zero;
-    }
-
     void FixedUpdate()
     {
         if (!AI) return;
@@ -124,8 +81,45 @@ public class Agent : MonoBehaviour
         }
     }
 
+    public void Apply(string functionName, Transform target = null)
+    {
+        SetTarget(target);
+        Invoke(functionName, 0);
 
-    public void UpdateText(string str)
+       // InputManager.instance.AgentRespondText(functionName + " =>> " + target.name);
+    }
+
+    private void Move()
+    {
+        agent.SetDestination(target.position);
+        moveSpeed = 1;
+    }
+
+    private void SetTarget(Transform t)
+    {
+        target = t;
+
+        // Turn the target Object into red color
+       // target.GetComponent<MeshRenderer>().material.color = Color.red;
+    }
+
+    public void SetAI(bool ai)
+    {
+        AI = ai;
+        controller.AI = AI;
+    }
+
+    private async Task pickingUp()
+    {
+        animator.SetTrigger("pickup");
+        await Task.Delay(4);
+        target.SetParent(rightHand);
+        target.localPosition = Vector3.zero;
+    }
+
+
+
+    public void UpdateText(string str) // not in use at the moment
     {
         verbalText.text = "";
         verbalText.DOText(str, 1);

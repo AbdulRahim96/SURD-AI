@@ -5,14 +5,10 @@ public class VoskDialogText : MonoBehaviour
 {
     public VoskSpeechToText VoskSpeechToText;
     public string DialogText;
-	public Transform content;
-	public Text textPrefab;
-	int count;
 
     void Awake()
     {
         VoskSpeechToText.OnTranscriptionResult += OnTranscriptionResult;
-		count = 1;
     }
 
     private void OnTranscriptionResult(string obj)
@@ -23,7 +19,6 @@ public class VoskDialogText : MonoBehaviour
         var result = new RecognitionResult(obj);
 		print("Best Result: " + result.Phrases[0].Text);
 		DialogText = result.Phrases[0].Text;
-		Display();
         /*
         var result = new RecognitionResult(obj);
         foreach (RecognizedPhrase p in result.Phrases)
@@ -151,11 +146,5 @@ public class VoskDialogText : MonoBehaviour
 		}*/
     }
 
-	private void Display()
-	{
-		Text text = Instantiate(textPrefab, content);
-		text.text = count + ". " + DialogText;
-		count++;
-	}
 
 }

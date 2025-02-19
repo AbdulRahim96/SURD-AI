@@ -77,7 +77,6 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Math Helpers\Math\FEngineering.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\callReq.cs" />
     <Compile Include="Assets\ThirdParty\Vosk\SpkModel.cs" />
-    <Compile Include="Assets\in Game Assets\SURD AI\SURD_AI.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.Features.cs" />
     <Compile Include="Assets\Libraries\DLLManipulator\scripts\NativeFunction.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_InsectLegsHelper.cs" />
@@ -211,6 +210,7 @@
     <Compile Include="Assets\in Game Assets\SURD AI\Script\Agent.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Animating Help\MotionInfluenceProcessor.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\Script\SURD_AI.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.Raycasting.cs" />
     <Compile Include="Assets\Scripts\VoiceProcessor.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_HardGlueOnStop.cs" />
