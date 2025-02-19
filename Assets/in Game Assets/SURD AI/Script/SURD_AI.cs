@@ -14,7 +14,7 @@ using static callReq;
 public class SURD_AI : MonoBehaviour
 {
     public static SURD_AI Instance;
-    [SerializeField] private string apiUrl = "https://c285-111-88-39-203.ngrok-free.app/ai-model";
+    [SerializeField] private string apiUrl = "https://surdaimodelserver.vercel.app/ai-model";
 
     public AIModelInput modelInput;
     public ResultData _response;
@@ -26,7 +26,7 @@ public class SURD_AI : MonoBehaviour
       //  CallAsyncAIModel("");
     }
 
-    public void SendToSURDModel(string input)
+    public void SendToSURDModel(string input) // not in use
     {
         modelInput.input = input;
         StartCoroutine(CallAIModel(modelInput));
