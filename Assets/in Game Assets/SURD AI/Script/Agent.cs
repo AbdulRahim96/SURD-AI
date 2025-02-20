@@ -10,7 +10,10 @@ public class Agent : MonoBehaviour
 {
     public string characterName, background;
     public ParticleSystem shootingParticle;
+    public ParticleSystem machineGun;
+    public ParticleSystem bazooka;
     public Transform target;
+    public float attackDistance;
     public State currentState, requiredAction;
     public NavMeshAgent agent;
     public float moveSpeed;
@@ -18,6 +21,8 @@ public class Agent : MonoBehaviour
     public Transform rightHand;
     public Text verbalText;
     private float currentSpeed;
+    public PlayerMovement playerMovement;
+    public bool autoFire;
     public enum State
     {
         None,
@@ -32,7 +37,10 @@ public class Agent : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<PlayerMovement>();
+        shootingParticle = machineGun;
     }
+
+
     void FixedUpdate()
     {
         if (!AI) return;
@@ -78,6 +86,18 @@ public class Agent : MonoBehaviour
                     }
                 }
                 break;
+
+            case State.None:
+                if(autoFire)
+                {
+                    GetAllEnemies();
+                    if (target)
+                    {
+                        Fire();
+                    }
+
+                }
+                break;
         }
     }
 
@@ -117,7 +137,21 @@ public class Agent : MonoBehaviour
         target.localPosition = Vector3.zero;
     }
 
-
+    private void GetAllEnemies()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, attackDistance);
+        foreach (Collider collider in colliders)
+        {
+            if(collider.gameObject.tag == "Enemy")
+            {
+                target = collider.gameObject.transform;
+                return;
+            }
+        }
+        target = null;
+        autoFire = false;
+        shootingParticle.Stop();
+    }
 
     public void UpdateText(string str) // not in use at the moment
     {
@@ -127,16 +161,21 @@ public class Agent : MonoBehaviour
     }
     private void Fire()
     {
+        transform.LookAt(target);
         if (isRepeating) return;
 
         moveSpeed = 0;
-        animator.SetBool("Shoot", true);
+        animator.SetBool("Aim", true);
         // Aim at target
-        transform.LookAt(target);
 
         // Start Firing
         shootingParticle.Play();
         isRepeating = true;
+    }
+
+    public void Auto_Fire()
+    {
+        autoFire = true;
     }
 
     private void Idle()
@@ -144,7 +183,7 @@ public class Agent : MonoBehaviour
         currentState = State.None;
         requiredAction = State.None;
         moveSpeed = 0;
-        animator.SetBool("Shoot", false);
+        animator.SetBool("Aim", false);
         agent.stoppingDistance = 5;
         shootingParticle.Stop();
         isRepeating = false;
@@ -168,7 +207,27 @@ public class Agent : MonoBehaviour
     {
         requiredAction = State.Attacking;
         currentState = State.Moving;
-        agent.stoppingDistance = 5;
+        transform.LookAt(target);
+        agent.stoppingDistance = attackDistance;
+        //shootingParticle = machineGun;
+    }
+
+    public async void Rocket_Launcher_Attack()
+    {
+        autoFire = false;
+        StartCoroutine(playerMovement.ChangeWeapon(1.9f / 2f));
+        transform.LookAt(target);
+        await Task.Delay(2000);
+        shootingParticle = bazooka;
+        shootingParticle.Play();
+        agent.stoppingDistance = 50;
+        requiredAction = State.Attacking;
+        currentState = State.Moving;
+    }
+
+    public void Switch_Weapon()
+    {
+        StartCoroutine(playerMovement.ChangeWeapon(1.9f / 2f));
     }
 
     #endregion

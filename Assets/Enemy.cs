@@ -62,6 +62,8 @@ public class Enemy : Health
         isDead = true;
         animator.Play("Die");
         collider.enabled = false;
+        tag = "Untagged";
+        Destroy(gameObject, 3);
     }
 
     private void OnDrawGizmosSelected()

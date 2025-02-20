@@ -15,7 +15,6 @@ Material:
   - _ALPHABLEND_ON
   - _COLORADDSUBDIFF_ON
   - _FADING_ON
-  - _REQUIRE_UV2
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -90,7 +89,7 @@ Material:
     - _DistortionStrengthScaled: 0
     - _DstBlend: 10
     - _EmissionEnabled: 0
-    - _FlipbookMode: 1
+    - _FlipbookMode: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -111,7 +110,7 @@ Material:
     - _pow: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 10.775115, g: 5.734015, b: 0, a: 1}
+    - _Color: {r: 4.237096, g: 2.254785, b: 0, a: 1}
     - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 12.996038, g: 6.0395856, b: 2.329477, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0.5, b: 0, a: 0}

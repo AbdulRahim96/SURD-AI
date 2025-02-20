@@ -43,9 +43,12 @@ public class Gun : MonoBehaviour
     [SerializeField]
     protected LayerMask hitCrosshairLayer;
     public bool isActive = false;
+    public bool isAI = false;
 
     void Start()
     {
+        if (isAI) return;
+
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = reloadClip;
         canvasRect = hitCrosshair.parent.GetComponent<RectTransform>();

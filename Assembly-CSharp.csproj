@@ -130,6 +130,7 @@
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vExtensions.cs" />
     <Compile Include="Assets\ThirdParty\Vosk\VoskRecognizer.cs" />
     <Compile Include="Assets\Scripts\Weapons\GunInfoUI.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\Script\PlayerMovement.cs" />
     <Compile Include="Assets\Libraries\eSpeakWrapper\Client.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA.AutoFinding.cs" />
@@ -146,7 +147,6 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegMotionSettingsPreset.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.Events.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.ExtraModules.Helper.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\Bases\LegsAnimatorControlModuleBase.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Setup Settings\LegsA.MainSetup.cs" />
@@ -159,6 +159,7 @@
     <Compile Include="Assets\in Game Assets\SURD AI\Script\Processor.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\FDebug_PerformanceTest.cs" />
     <Compile Include="Assets\Scripts\Weapons\Crosshair.cs" />
+    <Compile Include="Assets\Tank.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.Reference.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Modules - Community\LAM_FadeLegsSystemOnAnimator.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
