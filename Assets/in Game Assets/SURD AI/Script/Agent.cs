@@ -191,11 +191,25 @@ public class Agent : MonoBehaviour
 
     #region All Actions
 
-    public void Walk()
+    IEnumerator Walk()
     {
-        requiredAction = State.Moving;
-        currentState = State.Moving;
+
+        while(Vector3.Distance(transform.position, transform.forward) > 2)
+        {
+            agent.SetDestination(target.position);
+            yield return null;
+        }
+        // reached
+        // stop animation
+
+        // check for futher actions from the list
     }
+
+    //public void Walk()
+    //{
+    //    requiredAction = State.Moving;
+    //    currentState = State.Moving;
+    //}
 
     public void Pick_up()
     {

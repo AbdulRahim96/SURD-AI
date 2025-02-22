@@ -112,17 +112,17 @@ Material:
     - _AlphaClip: 1
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 10
-    - _AlphaPower: 2
+    - _AlphaPower: 0.14
     - _AlphaRemap: 1
     - _AlphaSrcBlend: 1
-    - _BaseColorStrength: 1
+    - _BaseColorStrength: 0.706
     - _BlendMode: 0
-    - _BlendStrength: 0.412
+    - _BlendStrength: 1
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 0
     - _CullModeForward: 2
     - _DepthOffsetEnable: 0
-    - _DiffuseStrength: 2
+    - _DiffuseStrength: 0.24
     - _DoubleSidedEnable: 1
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
@@ -133,15 +133,15 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EndColorStrength: 1
     - _ExcludeFromTUAndAA: 0
-    - _FlowMapFlipGreen: 0.203
-    - _GlobalStrength: 1
-    - _HighlightAOverlapEnd: 0.749
+    - _FlowMapFlipGreen: 0.28
+    - _GlobalStrength: 0.873
+    - _HighlightAOverlapEnd: 0.72
     - _HighlightAOverlapInvert: 0
-    - _HighlightAStrength: 0.976
-    - _HighlightBOverlapEnd: 1
+    - _HighlightAStrength: 0.776
+    - _HighlightBOverlapEnd: 0.79
     - _HighlightBOverlapInvert: 0.5
     - _HighlightBStrength: 1
-    - _HighlightBlend: 0.756
+    - _HighlightBlend: 1
     - _InvertRootMap: 0
     - _NormalStrength: 1
     - _OpaqueCullMode: 2
@@ -150,18 +150,18 @@ Material:
     - _ReceivesSSRTransparent: 0
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
-    - _RimTransmissionIntensity: 0.057729542
-    - _RootColorStrength: 1
+    - _RimTransmissionIntensity: 0
+    - _RootColorStrength: 0.838
     - _SecondarySmoothness: 0.625
     - _SecondarySpecularMultiplier: 0.038375
-    - _SecondarySpecularShift: 0
-    - _ShadowClip: 0.026
+    - _SecondarySpecularShift: -1
+    - _ShadowClip: 0
     - _SmoothnessMax: 0.8
     - _SmoothnessMin: 0.35337192
     - _SmoothnessPower: 1.5
     - _SpecularMultiplier: 0
     - _SpecularShiftMax: 0.12
-    - _SpecularShiftMin: 0.05
+    - _SpecularShiftMin: -1
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -181,22 +181,22 @@ Material:
     - _TransparentWritingMotionVec: 1
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 1
-    - _VertexColorStrength: 0.07
+    - _VertexColorStrength: 1
     - _ZTestDepthEqualForOpaque: 2
     - _ZTestTransparent: 2
     - _ZWrite: 0
     m_Colors:
-    - _DiffuseColor: {r: 0.6754716, g: 0.6754716, b: 0.6754716, a: 1}
+    - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 0}
     - _EndColor: {r: 0.31027776, g: 0.2297351, b: 0.16618572, a: 1}
-    - _HighlightAColor: {r: 0.99999994, g: 0.97189605, b: 0.8904402, a: 1}
+    - _HighlightAColor: {r: 1, g: 0.98160374, b: 0.9264151, a: 1}
     - _HighlightADistribution: {r: 0.1467, g: 0.15950002, b: 0.45820004, a: 0}
     - _HighlightBColor: {r: 0.96469975, g: 0.9426719, b: 0.8904402, a: 1}
     - _HighlightBDistribution: {r: 0.49370003, g: 0.49370003, b: 0.7494, a: 0}
     - _RootColor: {r: 0.31027776, g: 0.2297351, b: 0.16618572, a: 1}
     - _SpecularTint: {r: 1, g: 0.9135591, b: 0.8453558, a: 1}
-    - _VertexBaseColor: {r: 0.10943389, g: 0.10943389, b: 0.10943389, a: 1}
+    - _VertexBaseColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -96,17 +96,17 @@ Material:
     - _AlphaClip: 1
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 10
-    - _AlphaPower: 2
-    - _AlphaRemap: 1
+    - _AlphaPower: 1.25
+    - _AlphaRemap: 0.728
     - _AlphaSrcBlend: 1
-    - _BaseColorStrength: 1
+    - _BaseColorStrength: 0.692
     - _BlendMode: 0
-    - _BlendStrength: 0.412
+    - _BlendStrength: 0.6
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 0
     - _CullModeForward: 2
     - _DepthOffsetEnable: 0
-    - _DiffuseStrength: 2
+    - _DiffuseStrength: 1.19
     - _DoubleSidedEnable: 1
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
@@ -117,8 +117,8 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EndColorStrength: 1
     - _ExcludeFromTUAndAA: 0
-    - _FlowMapFlipGreen: 0.203
-    - _GlobalStrength: 1
+    - _FlowMapFlipGreen: 0.546
+    - _GlobalStrength: 0.609
     - _HighlightAOverlapEnd: 1
     - _HighlightAOverlapInvert: 0
     - _HighlightAStrength: 0.976
@@ -134,18 +134,18 @@ Material:
     - _ReceivesSSRTransparent: 0
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
-    - _RimTransmissionIntensity: 0.03011976
-    - _RootColorStrength: 1
-    - _SecondarySmoothness: 0.625
+    - _RimTransmissionIntensity: 0
+    - _RootColorStrength: 0.755
+    - _SecondarySmoothness: 0.152
     - _SecondarySpecularMultiplier: 0.026
-    - _SecondarySpecularShift: 0
-    - _ShadowClip: 0.026
-    - _SmoothnessMax: 0.8
-    - _SmoothnessMin: 0.41923738
-    - _SmoothnessPower: 1.5
+    - _SecondarySpecularShift: 0.6
+    - _ShadowClip: 0.242
+    - _SmoothnessMax: 0.946
+    - _SmoothnessMin: 0.602
+    - _SmoothnessPower: 1.79
     - _SpecularMultiplier: 0
-    - _SpecularShiftMax: 0.12
-    - _SpecularShiftMin: 0.05
+    - _SpecularShiftMax: 0.58
+    - _SpecularShiftMin: -0.01
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -165,9 +165,9 @@ Material:
     - _TransparentWritingMotionVec: 1
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 1
-    - _VertexColorStrength: 0.07
-    - _ZTestDepthEqualForOpaque: 2
-    - _ZTestTransparent: 2
+    - _VertexColorStrength: 1
+    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestTransparent: 4
     - _ZWrite: 0
     m_Colors:
     - _DiffuseColor: {r: 0.6754716, g: 0.6754716, b: 0.6754716, a: 1}

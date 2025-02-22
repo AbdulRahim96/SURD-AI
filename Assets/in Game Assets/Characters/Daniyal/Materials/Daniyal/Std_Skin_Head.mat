@@ -222,14 +222,14 @@ Material:
     - _LipsCavityAO: 2.5
     - _MaterialID: 0
     - _MaterialTypeMask: 1
-    - _MicroNormalStrength: 0.8
-    - _MicroNormalTiling: 20
+    - _MicroNormalStrength: 1.66
+    - _MicroNormalTiling: 13.1
     - _MicroSmoothnessMod: -0.055
     - _MouthCavityAO: 2.5
     - _NeckScatterScale: 1
     - _NeckSmoothnessMod: 0
     - _NormalBlendStrength: 0
-    - _NormalStrength: 1
+    - _NormalStrength: 1.46
     - _NostrilCavityAO: 3.5
     - _OpaqueCullMode: 2
     - _PerPixelSorting: 0
@@ -241,9 +241,9 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 1
-    - _SmoothnessMax: 0.8661538
+    - _SmoothnessMax: 0.751
     - _SmoothnessMin: 0
-    - _SmoothnessPower: 1.25
+    - _SmoothnessPower: 1.21
     - _SrcBlend: 1
     - _StencilRef: 4
     - _StencilRefDepth: 8
@@ -255,11 +255,11 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 15
     - _StencilWriteMaskMV: 41
-    - _SubsurfaceScale: 0
+    - _SubsurfaceScale: 0.04
     - _SupportDecals: 1
     - _SurfaceType: 0
-    - _ThicknessScale: 0
-    - _ThicknessScaleMin: 0
+    - _ThicknessScale: 1
+    - _ThicknessScaleMin: 1
     - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -278,7 +278,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _DiffuseColor: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+    - _DiffuseColor: {r: 0.78867924, g: 0.78867924, b: 0.78867924, a: 1}
     - _DiffusionProfileAsset: {r: 0.000007811633, g: -1.6874267e-36, b: -4.0477928e+21, a: 8.3947815e+11}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

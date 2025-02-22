@@ -93,7 +93,7 @@ Material:
     - _AlphaClip: 1
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 0
-    - _AlphaPower: 2
+    - _AlphaPower: 1.18
     - _AlphaRemap: 1
     - _AlphaSrcBlend: 1
     - _BaseColorStrength: 1
@@ -129,7 +129,7 @@ Material:
     - _PerPixelSorting: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
-    - _RenderQueueType: 4
+    - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _RimTransmissionIntensity: 0.03011976
     - _RootColorStrength: 1
