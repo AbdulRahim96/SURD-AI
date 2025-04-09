@@ -132,6 +132,8 @@ public class SURD_AI : MonoBehaviour
     [System.Serializable]
     public class AIModelInput
     {
+        [TextArea(3, 10)]
+        public string system_prompt;
         [TextArea(1, 5)]
         public string input;
         public string model;

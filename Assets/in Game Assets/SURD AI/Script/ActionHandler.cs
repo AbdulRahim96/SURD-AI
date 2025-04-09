@@ -23,7 +23,7 @@ public class ActionHandler : MonoBehaviour
 
     public void DoAction(Processor processor)
     {
-        agent.Apply(processor.actionKey, processor.target);
+        agent.CallFunction(processor.actionKey, processor.target);
 
         /*foreach (var item in actions)
         {

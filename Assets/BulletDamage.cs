@@ -6,7 +6,6 @@ public class BulletDamage : MonoBehaviour
     public LayerMask attackableLayer;
     private void OnParticleCollision(GameObject other)
     {
-        print("hitting");
         if(other.TryGetComponent<Health>(out Health obj))
         {
             if(obj.attackableLayer == attackableLayer)

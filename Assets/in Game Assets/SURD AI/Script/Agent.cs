@@ -37,82 +37,20 @@ public class Agent : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<PlayerMovement>();
-        shootingParticle = machineGun;
     }
 
-
-    void FixedUpdate()
+    public void PlayAction(string functionName) // testing through Button
     {
-        if (!AI) return;
-        currentSpeed = Mathf.Lerp(currentSpeed, moveSpeed, Time.deltaTime * 3);
-        animator.SetFloat("MoveZ", currentSpeed);
-
-        switch (currentState)
-        {
-            case State.Moving:
-                if (Vector3.Distance(transform.position, target.position) < agent.stoppingDistance)
-                {
-                    if (requiredAction == State.Attacking)
-                    {
-                        currentState = State.Attacking;
-                    }
-                    else if (requiredAction == State.pickup)
-                    {
-                        pickingUp();
-                        Idle();
-                    }
-                    else
-                        Idle();
-                }
-                else
-                    Move();
-
-                break;
-            case State.Attacking:
-                if (target == null)
-                {
-
-                    Idle();
-                }
-                else
-                {
-                    if (Vector3.Distance(transform.position, target.position) > agent.stoppingDistance)
-                    {
-                        currentState = State.Moving;
-                    }
-                    else
-                    {
-                        Fire();
-                    }
-                }
-                break;
-
-            case State.None:
-                if(autoFire)
-                {
-                    GetAllEnemies();
-                    if (target)
-                    {
-                        Fire();
-                    }
-
-                }
-                break;
-        }
+        StartCoroutine(functionName);
     }
 
-    public void Apply(string functionName, Transform target = null)
+    public void CallFunction(string functionName, Transform target = null)
     {
+        StopAllCoroutines();
         SetTarget(target);
-        Invoke(functionName, 0);
+        StartCoroutine(functionName);
 
-       // InputManager.instance.AgentRespondText(functionName + " =>> " + target.name);
-    }
-
-    private void Move()
-    {
-        agent.SetDestination(target.position);
-        moveSpeed = 1;
+        // InputManager.instance.AgentRespondText(functionName + " =>> " + target.name);
     }
 
     private void SetTarget(Transform t)
@@ -121,20 +59,6 @@ public class Agent : MonoBehaviour
 
         // Turn the target Object into red color
        // target.GetComponent<MeshRenderer>().material.color = Color.red;
-    }
-
-    public void SetAI(bool ai)
-    {
-        AI = ai;
-        controller.AI = AI;
-    }
-
-    private async Task pickingUp()
-    {
-        animator.SetTrigger("pickup");
-        await Task.Delay(4);
-        target.SetParent(rightHand);
-        target.localPosition = Vector3.zero;
     }
 
     private void GetAllEnemies()
@@ -153,96 +77,94 @@ public class Agent : MonoBehaviour
         shootingParticle.Stop();
     }
 
-    public void UpdateText(string str) // not in use at the moment
+    public void SetAI(bool ai)
+    {
+        AI = ai;
+        controller.AI = AI;
+    }
+
+    void UpdateText(string str) // not in use at the moment
     {
         verbalText.text = "";
         verbalText.DOText(str, 1);
         verbalText.DOText("", 0).SetDelay(3);
     }
-    private void Fire()
-    {
-        transform.LookAt(target);
-        if (isRepeating) return;
-
-        moveSpeed = 0;
-        animator.SetBool("Aim", true);
-        // Aim at target
-
-        // Start Firing
-        shootingParticle.Play();
-        isRepeating = true;
-    }
-
-    public void Auto_Fire()
-    {
-        autoFire = true;
-    }
-
-    private void Idle()
-    {
-        currentState = State.None;
-        requiredAction = State.None;
-        moveSpeed = 0;
-        animator.SetBool("Aim", false);
-        agent.stoppingDistance = 5;
-        shootingParticle.Stop();
-        isRepeating = false;
-    }
 
     #region All Actions
-
-    IEnumerator Walk()
+    IEnumerator Move()
     {
-
-        while(Vector3.Distance(transform.position, transform.forward) > 2)
+        while (Vector3.Distance(transform.position, target.position) >= agent.stoppingDistance)
         {
+            currentSpeed = Mathf.Clamp01(agent.velocity.magnitude);
+            animator.SetFloat("MoveZ", currentSpeed);
             agent.SetDestination(target.position);
             yield return null;
         }
+
         // reached
         // stop animation
-
-        // check for futher actions from the list
+        animator.SetFloat("MoveZ", 0);
     }
-
-    //public void Walk()
-    //{
-    //    requiredAction = State.Moving;
-    //    currentState = State.Moving;
-    //}
-
-    public void Pick_up()
+    IEnumerator Attack()
     {
-        requiredAction = State.pickup;
-        currentState = State.Moving;
-        agent.stoppingDistance = 0.5f;
-    }
-    public void Attack()
-    {
-        requiredAction = State.Attacking;
-        currentState = State.Moving;
-        transform.LookAt(target);
         agent.stoppingDistance = attackDistance;
-        //shootingParticle = machineGun;
-    }
+        while (target)
+        {
+            // Wait until Move finishes
+            yield return StartCoroutine(Move());
 
-    public async void Rocket_Launcher_Attack()
+            // Then fire
+            yield return StartCoroutine(Fire());
+        }
+        shootingParticle.Stop();
+        agent.Stop();
+    }
+    IEnumerator AttackAll()
     {
+        autoFire = true;
+        agent.stoppingDistance = attackDistance;
+
+        while (target && target.CompareTag("Enemy"))
+        {
+            // Wait until Move finishes
+            yield return StartCoroutine(Move());
+
+            // Then fire
+            yield return StartCoroutine(Fire());
+
+            if (!target.CompareTag("Enemy"))
+                GetAllEnemies();
+        }
         autoFire = false;
-        StartCoroutine(playerMovement.ChangeWeapon(1.9f / 2f));
-        transform.LookAt(target);
-        await Task.Delay(2000);
+        shootingParticle.Stop();
+        agent.Stop();
+    }
+    IEnumerator Rocket_Launcher_Attack()
+    {
+        transform.DOLookAt(target.position, .5f);
+        yield return StartCoroutine(Switch_Weapon());
         shootingParticle = bazooka;
         shootingParticle.Play();
-        agent.stoppingDistance = 50;
-        requiredAction = State.Attacking;
-        currentState = State.Moving;
     }
-
-    public void Switch_Weapon()
+    IEnumerator Switch_Weapon()
     {
-        StartCoroutine(playerMovement.ChangeWeapon(1.9f / 2f));
+        yield return StartCoroutine(playerMovement.ChangeWeapon(1.9f / 2f));
     }
-
+    IEnumerator Pick_up()
+    {
+        yield return StartCoroutine(Move());
+        animator.SetTrigger("pickup");
+        yield return new WaitForSeconds(4);
+        target.SetParent(rightHand);
+        target.localPosition = Vector3.zero;
+    }
+    private IEnumerator Fire()
+    {
+        print("firing");
+        agent.SetDestination(transform.position);
+        transform.LookAt(target);
+        shootingParticle.Play();
+        yield return new WaitForSeconds(1);
+    }
     #endregion
 }

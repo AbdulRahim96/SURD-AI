@@ -6,6 +6,7 @@ public class Processor : MonoBehaviour
 {
     public string verbalResponse;
     public string actionKey;
+    public List<string> keys;
     public Transform target;
     // Start is called before the first frame update
     

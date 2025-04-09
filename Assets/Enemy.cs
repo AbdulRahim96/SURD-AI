@@ -51,6 +51,7 @@ public class Enemy : Health
     private void Attack()
     {
         animator.SetBool("chasing", false);
+        transform.LookAt(player);
         agent.SetDestination(transform.position);
         if (isAttacking) return;
         shootingParticle.Play();
