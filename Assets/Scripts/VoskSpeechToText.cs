@@ -33,8 +33,10 @@ public class VoskSpeechToText : MonoBehaviour
 	public List<string> KeyPhrases = new List<string>();
 
 	[Header("HotKey")]
-	public KeyCode key;
+	public KeyCode keyDaniyal, keyUsman;
 	public VoskDialogText dialogText;
+
+	public Agent daniyal, usman;
 
 	//Cached version of the Vosk Model.
 	private Model _model;
@@ -295,9 +297,18 @@ public class VoskSpeechToText : MonoBehaviour
 
 		if (!PlayerMovement.enableControls) return;
 
-        if (Input.GetKeyDown(key))
-			ToggleRecording();
-		if (Input.GetKeyUp(key))
+        if (Input.GetKeyDown(keyDaniyal))
+		{
+			IO_Manager.instance.currentActiveAgent = daniyal;
+            ToggleRecording();
+		}
+		else if (Input.GetKeyDown(keyUsman))
+		{
+            IO_Manager.instance.currentActiveAgent = usman;
+            ToggleRecording();
+        }
+
+		if (Input.GetKeyUp(keyUsman) || Input.GetKeyUp(keyDaniyal))
             ToggleRecording();
 
     }

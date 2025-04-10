@@ -47,6 +47,7 @@ public class Agent : MonoBehaviour
     public void CallFunction(string functionName, Transform target = null)
     {
         StopAllCoroutines();
+        shootingParticle.Stop();
         SetTarget(target);
         StartCoroutine(functionName);
 
