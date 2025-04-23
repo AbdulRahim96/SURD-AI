@@ -24,6 +24,7 @@ public class ActionHandler : MonoBehaviour
     public void DoAction(Processor processor)
     {
         agent.CallFunction(processor.actionKey, processor.target);
+        agent.Speak(processor.verbalResponse);
 
         /*foreach (var item in actions)
         {

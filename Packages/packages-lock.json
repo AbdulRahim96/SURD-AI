@@ -7,6 +7,12 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.lmnt.unity": {
+      "version": "file:com.lmnt.unity",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.microsoft.mrtk.tts.windows": {
       "version": "1.0.4",
       "depth": 0,

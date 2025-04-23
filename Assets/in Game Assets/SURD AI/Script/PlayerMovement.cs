@@ -169,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
     void CameraPack() {
         cameraPack.position = Vector3.Lerp(cameraPack.position, transform.position, Time.deltaTime * 20f);
         cameraPack.rotation = transform.rotation;
-       // rotationY -= Input.GetAxis("Mouse Y") * mouseSensitive * 100f * Time.deltaTime;
+        rotationY -= Input.GetAxis("Mouse Y") * mouseSensitive * 100f * Time.deltaTime;
         rotationY = Mathf.Clamp(rotationY, minCameraRotY, maxCameraRotY);
         Hcamera.rotation = Quaternion.Euler(rotationY, Hcamera.eulerAngles.y, Hcamera.eulerAngles.z);
 

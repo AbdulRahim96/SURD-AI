@@ -247,9 +247,7 @@ public class VoiceProcessor : MonoBehaviour
         _didDetect = false;
 
         StopCoroutine(RecordData());
-
-        if (OnRecordingStop != null)
-            OnRecordingStop.Invoke();
+        OnRecordingStop?.Invoke();
     }
 
     /// <summary>

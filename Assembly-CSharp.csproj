@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Weapons\Rifle.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Setup Settings\LegsA.IK.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\Script\IO_Manager.cs" />
+    <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.ImpulseSettings.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.BodyStep.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.BoneHelper.cs" />
@@ -234,11 +235,13 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.IK.cs" />
     <Compile Include="Assets\Libraries\DLLManipulator\scripts\Detour.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\Inspector And Scene Tools\FSceneIcons.cs" />
+    <Compile Include="Assets\SURD_Aiming.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Math Helpers\Math\FVectorMethods.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Level Design\Generators Shared\Helpers\MinMax.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.Controll.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.cs" />
+    <Compile Include="Assets\SURD_Item.cs" />
     <Compile Include="Assets\ThirdParty\Vosk\Model.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\GUI Helpers\FGUI_Finders.cs" />
   </ItemGroup>
@@ -252,6 +255,7 @@
     <None Include="Assets\ThirdParty\Vosk\Plugins\Windows\libwinpthread-1.dll" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
     <None Include="Assets\ThirdParty\Vosk\Plugins\Windows\libvosk.dll" />
     <None Include="Assets\in Game Assets\NativeAmericanPack\Source\Shaders\DirectionalBlend.shader" />
@@ -262,8 +266,10 @@
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Magic Effects\Shaders\Ice.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Misc Effects\Shaders\Respawn.shader" />
+    <None Include="Assets\Resources\LMNT_Voices.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Character_Creator_and_iClone_Auto_Setup_1.4.6_for_Unity_HDRP12\HDRP\Material Templates\notes.txt" />
+    <None Include="Assets\Resources\LMNT_API_Key.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_SDF.shader" />
@@ -273,6 +279,7 @@
     <None Include="Assets\in Game Assets\Characters\Daniyal\Daniyal_ImportInfo.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Presets Directory\Leg Custom Module Presets\dummy.txt" />
+    <None Include="Assets\QuickOutline\Readme.txt" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Presets Directory\Leg Impulses Presets\dummy.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\in Game Assets\Characters\Saud\Saud_ImportInfo.txt" />
@@ -288,6 +295,7 @@
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Misc Effects\Shaders\FireFly.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\QuickOutline\Resources\Shaders\OutlineFill.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Presets Directory\dummy.txt" />
     <None Include="Assets\in Game Assets\Characters\Usman\Usman_ImportInfo.txt" />
@@ -1490,6 +1498,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="lmnt.unity.editor">
+      <HintPath>Library\ScriptAssemblies\lmnt.unity.editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
       <Private>False</Private>
@@ -1500,6 +1512,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="lmnt.unity.runtime">
+      <HintPath>Library\ScriptAssemblies\lmnt.unity.runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Formats.Fbx.Runtime">

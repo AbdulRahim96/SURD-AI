@@ -6,6 +6,7 @@ TagManager:
   tags:
   - JumpOver
   - Enemy
+  - Allies
   layers:
   - Default
   - TransparentFX

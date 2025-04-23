@@ -21,42 +21,11 @@ public class Enemy : Health
         agent.stoppingDistance = attackRange;
     }
 
-    private void FixedUpdate()
+    public void SetChase(bool check)
     {
-        if (isDead)
-        {
-            shootingParticle.Stop();
-            return;
-        }
-        distance = Vector3.Distance(transform.position, player.position);
-        if (distance > attackRange + 0.2f)
-        {
-            animator.SetBool("chasing", true);
-            agent.SetDestination(player.position);
-            isAttacking = false;
-        }
-        else
-        {
-            Attack();
-        }
-        
-
+        animator.SetBool("chasing", check);
     }
 
-    private float Distance()
-    {
-        return Vector3.Distance(transform.position, player.position);
-    }
-
-    private void Attack()
-    {
-        animator.SetBool("chasing", false);
-        transform.LookAt(player);
-        agent.SetDestination(transform.position);
-        if (isAttacking) return;
-        shootingParticle.Play();
-        isAttacking = true;
-    }
 
     public void Die()
     {

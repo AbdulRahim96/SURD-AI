@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DG.Tweening;
+using LMNT;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityLibrary;
 
 public class Agent : MonoBehaviour
 {
@@ -23,6 +25,8 @@ public class Agent : MonoBehaviour
     private float currentSpeed;
     public PlayerMovement playerMovement;
     public bool autoFire;
+    public bool isVerbalResponse;
+    private LMNTSpeech speech;
     public enum State
     {
         None,
@@ -37,6 +41,7 @@ public class Agent : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<PlayerMovement>();
+        speech = GetComponent<LMNTSpeech>();
     }
 
     public void PlayAction(string functionName) // testing through Button
@@ -50,7 +55,7 @@ public class Agent : MonoBehaviour
         shootingParticle.Stop();
         SetTarget(target);
         StartCoroutine(functionName);
-
+        print("Function Called: " +  functionName);
         // InputManager.instance.AgentRespondText(functionName + " =>> " + target.name);
     }
 
@@ -84,15 +89,15 @@ public class Agent : MonoBehaviour
         controller.AI = AI;
     }
 
-    void UpdateText(string str) // not in use at the moment
+    public void Speak(string str) // LMNT Voice to Speech
     {
-        verbalText.text = "";
-        verbalText.DOText(str, 1);
-        verbalText.DOText("", 0).SetDelay(3);
+        if(isVerbalResponse)
+        {
+            speech.dialogue = str;
+            StartCoroutine(speech.Talk());
+        }
     }
-
-    #region All Actions
-    IEnumerator Move()
+    private IEnumerator moving()
     {
         while (Vector3.Distance(transform.position, target.position) >= agent.stoppingDistance)
         {
@@ -104,31 +109,46 @@ public class Agent : MonoBehaviour
 
         // reached
         // stop animation
+        print("reached");
         animator.SetFloat("MoveZ", 0);
+    }
+
+    #region All Actions
+
+    private IEnumerator Move()
+    {
+        agent.stoppingDistance = 1;
+
+        // Wait until Move finishes
+        yield return StartCoroutine(moving());
+        agent.SetDestination(transform.position);
     }
     IEnumerator Attack()
     {
         agent.stoppingDistance = attackDistance;
-        while (target)
+        while (target.CompareTag("Enemy"))
         {
             // Wait until Move finishes
-            yield return StartCoroutine(Move());
+            yield return StartCoroutine(moving());
 
             // Then fire
             yield return StartCoroutine(Fire());
         }
         shootingParticle.Stop();
-        agent.Stop();
+        animator.SetBool("Aim", false);
+        agent.SetDestination(transform.position);
     }
     IEnumerator AttackAll()
     {
         autoFire = true;
         agent.stoppingDistance = attackDistance;
 
+        GetAllEnemies();
+
         while (target && target.CompareTag("Enemy"))
         {
             // Wait until Move finishes
-            yield return StartCoroutine(Move());
+            yield return StartCoroutine(moving());
 
             // Then fire
             yield return StartCoroutine(Fire());
@@ -138,7 +158,7 @@ public class Agent : MonoBehaviour
         }
         autoFire = false;
         shootingParticle.Stop();
-        agent.Stop();
+        agent.SetDestination(transform.position);
     }
     IEnumerator Rocket_Launcher_Attack()
     {
@@ -146,6 +166,7 @@ public class Agent : MonoBehaviour
         yield return StartCoroutine(Switch_Weapon());
         shootingParticle = bazooka;
         shootingParticle.Play();
+        bazooka.GetComponent<AudioSource>().Play();
     }
     IEnumerator Switch_Weapon()
     {
@@ -153,7 +174,7 @@ public class Agent : MonoBehaviour
     }
     IEnumerator Pick_up()
     {
-        yield return StartCoroutine(Move());
+        yield return StartCoroutine(moving());
         animator.SetTrigger("pickup");
         yield return new WaitForSeconds(4);
         target.SetParent(rightHand);
@@ -161,10 +182,11 @@ public class Agent : MonoBehaviour
     }
     private IEnumerator Fire()
     {
-        print("firing");
+        animator.SetBool("Aim", true);
         agent.SetDestination(transform.position);
         transform.LookAt(target);
         shootingParticle.Play();
+        shootingParticle.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1);
     }
     #endregion
