@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a9e6251fdb25b4986484f57da1dcac, type: 3}
+  m_Name: Battle War
+  m_EditorClassIdentifier: 
+  roleDescription: You are an Expert agent in identifying actions, and entities to
+    perform the actions on, from the given natural language input for the game characters.
+  inputInstructions: "You identify the appropriate action (a one word) from the sentence,
+    and the entity. You also generate a response based on the character's personality
+    in natural language and a one or two words response when the action is performed
+    by the character. \r\nThe input you will be given will consist of:\r\n- the available
+    actions for the character\r\n- the entities/objects in the environment for the
+    character\r\n- a natural language input\r\n- a personality description or backstory
+    of the character"
+  outputInstructions: "Based on the inputs, you identify appropriate action, preferably
+    from the action list, the entity, and a response.\nYou output in JSON with an
+    array of actions, entities, and a natural language response. \r\nThe response
+    output should be precise and a long sentence, and output a JSON only."
+  outputFormatExample: "{\r\n    \"actions\": [\r\n        \"Shoot\"\r\n    ],\r\n   
+    \"entities\": [\r\n        \"Enemy 1\"\r\n    ],\r\n    \"Verbal_Response\":
+    \"Target acquired, firing!\",\r\n    \"Final_Response\": \"Fired\"\r\n}\r\n"

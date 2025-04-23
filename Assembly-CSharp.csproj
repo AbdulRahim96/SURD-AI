@@ -243,6 +243,7 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.cs" />
     <Compile Include="Assets\SURD_Item.cs" />
     <Compile Include="Assets\ThirdParty\Vosk\Model.cs" />
+    <Compile Include="Assets\in Game Assets\SURD AI\SystemPrompt_Object.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\GUI Helpers\FGUI_Finders.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -580,6 +580,7 @@
 "Assets/in Game Assets/SURD AI/Script/PlayerMovement.cs"
 "Assets/in Game Assets/SURD AI/Script/Processor.cs"
 "Assets/in Game Assets/SURD AI/Script/SURD_AI.cs"
+"Assets/in Game Assets/SURD AI/SystemPrompt_Object.cs"
 "Assets/InputFieldScript.cs"
 "Assets/Invector-3rdPersonController_LITE/3D Models/Others/HealthItem/vAnimateUV.cs"
 "Assets/Invector-3rdPersonController_LITE/Scripts/Camera/vThirdPersonCamera.cs"

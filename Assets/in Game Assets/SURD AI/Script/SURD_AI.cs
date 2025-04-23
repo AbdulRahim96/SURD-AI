@@ -15,15 +15,23 @@ public class SURD_AI : MonoBehaviour
 {
     public static SURD_AI Instance;
     [SerializeField] private string apiUrl = "https://surdaimodelserver.vercel.app/ai-model";
+    public SystemPrompt_Object AI_System;
 
     public AIModelInput modelInput;
     public ResultData _response;
 
-
     private void Awake()
     {
         Instance = this;
-      //  CallAsyncAIModel("");
+
+        if (AI_System)
+            modelInput.system_prompt = AI_System.GetFullSystemInput();
+    }
+
+    private void OnValidate()
+    {
+        if (AI_System)
+            modelInput.system_prompt = AI_System.GetFullSystemInput();
     }
 
     public void SendToSURDModel(string input) // not in use

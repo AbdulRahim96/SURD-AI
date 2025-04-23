@@ -123,6 +123,18 @@ public class Agent : MonoBehaviour
         yield return StartCoroutine(moving());
         agent.SetDestination(transform.position);
     }
+
+    IEnumerator Follow()
+    {
+        agent.stoppingDistance = 1;
+        while (true)
+        {
+            // Wait until Move finishes
+            yield return StartCoroutine(moving());
+            agent.SetDestination(transform.position);
+        }
+        agent.SetDestination(transform.position);
+    }
     IEnumerator Attack()
     {
         agent.stoppingDistance = attackDistance;
