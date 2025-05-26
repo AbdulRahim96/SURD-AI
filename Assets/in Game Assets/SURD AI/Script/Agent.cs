@@ -14,6 +14,7 @@ public class Agent : MonoBehaviour
     public ParticleSystem shootingParticle;
     public ParticleSystem machineGun;
     public ParticleSystem bazooka;
+    public GameObject explosive;
     public Transform target;
     public float attackDistance;
     public State currentState, requiredAction;
@@ -27,6 +28,7 @@ public class Agent : MonoBehaviour
     public bool autoFire;
     public bool isVerbalResponse;
     private LMNTSpeech speech;
+    private Processor currentAction;
     public enum State
     {
         None,
@@ -49,13 +51,16 @@ public class Agent : MonoBehaviour
         StartCoroutine(functionName);
     }
 
-    public void CallFunction(string functionName, Transform target = null)
+    public void CallFunction(Processor action)
     {
+        currentAction = action;
         StopAllCoroutines();
+        Speak(action.verbalResponse); // LMNT Voice to Speech
         shootingParticle.Stop();
-        SetTarget(target);
-        StartCoroutine(functionName);
-        print("Function Called: " +  functionName);
+        SetTarget(action.target);
+        StartCoroutine(action.actionKey);
+        
+       // print("Function Called: " +  action.actionKey);
         // InputManager.instance.AgentRespondText(functionName + " =>> " + target.name);
     }
 
@@ -149,6 +154,9 @@ public class Agent : MonoBehaviour
         shootingParticle.Stop();
         animator.SetBool("Aim", false);
         agent.SetDestination(transform.position);
+
+        IO_Manager.instance.ShowSubtitle(currentAction.finalResponse);
+        Speak(currentAction.finalResponse); // LMNT Voice to Speech
     }
     IEnumerator AttackAll()
     {
@@ -171,6 +179,9 @@ public class Agent : MonoBehaviour
         autoFire = false;
         shootingParticle.Stop();
         agent.SetDestination(transform.position);
+
+        IO_Manager.instance.ShowSubtitle(currentAction.finalResponse);
+        Speak(currentAction.finalResponse); // LMNT Voice to Speech
     }
     IEnumerator Rocket_Launcher_Attack()
     {
@@ -191,6 +202,42 @@ public class Agent : MonoBehaviour
         yield return new WaitForSeconds(4);
         target.SetParent(rightHand);
         target.localPosition = Vector3.zero;
+    }
+
+    IEnumerator Plant()
+    {
+        agent.stoppingDistance = 1;
+       // Transform initPos = transform;
+        yield return StartCoroutine(moving());
+        animator.SetTrigger("pickup");
+        yield return new WaitForSeconds(2);
+        Instantiate(explosive, target.position, Quaternion.identity);
+        target = GameObject.FindWithTag("Player").transform;
+        yield return new WaitForSeconds(1);
+        yield return StartCoroutine(moving());
+
+        IO_Manager.instance.ShowSubtitle(currentAction.finalResponse);
+        Speak(currentAction.finalResponse); // LMNT Voice to Speech
+    }
+
+    IEnumerator Lock()
+    {
+        transform.DOLookAt(target.position, 2).OnComplete(() =>
+        {
+            string response = currentAction.finalResponse + ". Waiting for your signal to fire.";
+            IO_Manager.instance.ShowSubtitle(response);
+            Speak(response); // LMNT Voice to Speech
+        });
+
+        animator.SetBool("Aim", true);
+
+        while (!Input.GetMouseButtonDown(0))
+        {
+            transform.LookAt(target);
+            yield return null; // Wait for the next frame
+        }
+        shootingParticle.Play();
+
     }
     private IEnumerator Fire()
     {

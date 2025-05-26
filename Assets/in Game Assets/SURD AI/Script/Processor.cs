@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Processor : MonoBehaviour
 {
-    public string verbalResponse;
+    public string verbalResponse, finalResponse;
     public string actionKey;
     public List<string> keys;
     public Transform target;
@@ -22,6 +22,7 @@ public class Processor : MonoBehaviour
              }
          }*/
         verbalResponse = response.verbal_Response;
+        finalResponse = response.final_Response;
 
         if (response.actions.Length == 0) return;
         actionKey = response.actions[0];

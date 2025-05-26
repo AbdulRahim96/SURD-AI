@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActionHandler : MonoBehaviour
 {
     private Agent agent;
-    public Actions[] actions;
+    public List<Actions> actions;
 
     private void Awake()
     {
@@ -23,8 +23,8 @@ public class ActionHandler : MonoBehaviour
 
     public void DoAction(Processor processor)
     {
-        agent.CallFunction(processor.actionKey, processor.target);
-        agent.Speak(processor.verbalResponse);
+        agent.CallFunction(processor);
+       // agent.Speak(processor.verbalResponse);
 
         /*foreach (var item in actions)
         {
@@ -34,6 +34,27 @@ public class ActionHandler : MonoBehaviour
             }
         }*/
     }
+
+    public void AddAction(string actionName, string description)
+    {
+        Actions newAction = new Actions
+        {
+            actionName = actionName,
+            description = description
+        };
+        actions.Add(newAction);
+    }
+
+    public void RemoveActionByName(string actionName)
+    {
+        Actions actionToRemove = actions.Find(a => a.actionName == actionName);
+        if (actionToRemove != null)
+        {
+            actions.Remove(actionToRemove);
+        }
+    }
+
+    public void RemoveActionByIndex(int index) => actions.RemoveAt(index);
 
     [System.Serializable]
     public class Actions

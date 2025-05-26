@@ -77,10 +77,6 @@ public class IO_Manager : MonoBehaviour
         
         // output recieved from SURD AI is sent back to environemnt to match
         Processor p = new Processor(responseData, Interactables.instance);
-        GameObject obj = new GameObject("processor");
-        Processor pro = obj.AddComponent<Processor>();
-        pro = p;
-        // p is an object which found all matches from the environment
         ShowSubtitle(p.verbalResponse);
         currentActiveAgent.GetComponent<ActionHandler>().DoAction(p);
     }
