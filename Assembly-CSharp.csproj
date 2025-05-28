@@ -93,6 +93,8 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.ImpulseSettings.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.BodyStep.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.BoneHelper.cs" />
+    <Compile Include="Assets\CustomTrigger.cs" />
+    <Compile Include="Assets\Interactable_Modifier.cs" />
     <Compile Include="Assets\Libraries\eSpeakWrapper\Event.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Modules - Community\Custom IK Example\AxisLockableIK.cs" />
     <Compile Include="Assets\BulletDamage.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Glue.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vExtensions.cs" />
     <Compile Include="Assets\ThirdParty\Vosk\VoskRecognizer.cs" />
+    <Compile Include="Assets\Objective_Panel.cs" />
     <Compile Include="Assets\Scripts\Weapons\GunInfoUI.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\Script\PlayerMovement.cs" />
     <Compile Include="Assets\Libraries\eSpeakWrapper\Client.cs" />
@@ -193,6 +196,7 @@
     <Compile Include="Assets\Scripts\RecognitionResult.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\IK\Limb\FimpIK_Limb.Bone.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_AutoGroundAlignBodyMatrix.cs" />
+    <Compile Include="Assets\Objective.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\LAM_ImpulsesOnStopAndOnLand.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\Property Attributes\FPD_FixedCurveWindowAttribute.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\InputFieldScript.cs" />
@@ -232,6 +236,7 @@
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Forwarding\LegsA.Settings.Animating.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonAnimator.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\CharacterController\vThirdPersonController.cs" />
+    <Compile Include="Assets\Bomb.cs" />
     <Compile Include="Assets\Scripts\Weapons\Equipment.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Leg.IK.cs" />
     <Compile Include="Assets\Libraries\DLLManipulator\scripts\Detour.cs" />

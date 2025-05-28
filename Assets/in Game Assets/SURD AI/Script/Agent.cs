@@ -55,7 +55,6 @@ public class Agent : MonoBehaviour
     {
         currentAction = action;
         StopAllCoroutines();
-        Speak(action.verbalResponse); // LMNT Voice to Speech
         shootingParticle.Stop();
         SetTarget(action.target);
         StartCoroutine(action.actionKey);
@@ -74,7 +73,7 @@ public class Agent : MonoBehaviour
 
     private void GetAllEnemies()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, attackDistance);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, attackDistance + 5);
         foreach (Collider collider in colliders)
         {
             if(collider.gameObject.tag == "Enemy")
@@ -118,6 +117,34 @@ public class Agent : MonoBehaviour
         animator.SetFloat("MoveZ", 0);
     }
 
+    private bool PathClear()
+    {
+        Vector3 direction = target.position - transform.position;
+        float distance = direction.magnitude;
+
+        // Draw the ray in the Scene view (green if hit, red if not)
+        if (Physics.Raycast(transform.position + Vector3.up, direction.normalized, out RaycastHit hit, distance))
+        {
+            if (hit.transform == target)
+            {
+                Debug.DrawRay(transform.position + Vector3.up, direction.normalized * hit.distance, Color.green);
+                return true;
+            }
+            else
+            {
+                Debug.DrawRay(transform.position + Vector3.up, direction.normalized * hit.distance, Color.red);
+                return false;
+            }
+        }
+        else
+        {
+            Debug.DrawRay(transform.position + Vector3.up, direction.normalized * hit.distance, Color.green);
+            return true;
+        }
+
+    }
+
+
     #region All Actions
 
     private IEnumerator Move()
@@ -131,7 +158,7 @@ public class Agent : MonoBehaviour
 
     IEnumerator Follow()
     {
-        agent.stoppingDistance = 1;
+        agent.stoppingDistance = 2;
         while (true)
         {
             // Wait until Move finishes
@@ -143,13 +170,19 @@ public class Agent : MonoBehaviour
     IEnumerator Attack()
     {
         agent.stoppingDistance = attackDistance;
-        while (target.CompareTag("Enemy"))
+        while (target.CompareTag("Enemy") || target.CompareTag("Player"))
         {
             // Wait until Move finishes
             yield return StartCoroutine(moving());
 
             // Then fire
-            yield return StartCoroutine(Fire());
+            if (PathClear())
+            {
+                agent.stoppingDistance = attackDistance;
+                yield return StartCoroutine(Fire());
+            }
+            else
+                agent.stoppingDistance--;
         }
         shootingParticle.Stop();
         animator.SetBool("Aim", false);
@@ -171,7 +204,13 @@ public class Agent : MonoBehaviour
             yield return StartCoroutine(moving());
 
             // Then fire
-            yield return StartCoroutine(Fire());
+            if (PathClear())
+            {
+                agent.stoppingDistance = attackDistance;
+                yield return StartCoroutine(Fire());
+            }
+            else
+                agent.stoppingDistance--;
 
             if (!target.CompareTag("Enemy"))
                 GetAllEnemies();
@@ -210,7 +249,7 @@ public class Agent : MonoBehaviour
        // Transform initPos = transform;
         yield return StartCoroutine(moving());
         animator.SetTrigger("pickup");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         Instantiate(explosive, target.position, Quaternion.identity);
         target = GameObject.FindWithTag("Player").transform;
         yield return new WaitForSeconds(1);
@@ -227,6 +266,8 @@ public class Agent : MonoBehaviour
             string response = currentAction.finalResponse + ". Waiting for your signal to fire.";
             IO_Manager.instance.ShowSubtitle(response);
             Speak(response); // LMNT Voice to Speech
+            target.GetChild(target.childCount - 1).gameObject.SetActive(false); 
+            Objective.Instance.value++;
         });
 
         animator.SetBool("Aim", true);

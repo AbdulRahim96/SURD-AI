@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Ionic.Zip;
+using TMPro;
 using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -33,10 +34,13 @@ public class VoskSpeechToText : MonoBehaviour
 	public List<string> KeyPhrases = new List<string>();
 
 	[Header("HotKey")]
-	public KeyCode keyDaniyal, keyUsman;
+	public KeyCode[] voiceKeys;
+	public KeyCode keyAll;
+	public TextMeshProUGUI talkingText;
 	public VoskDialogText dialogText;
 
-	public Agent daniyal, usman;
+
+	public List<Agent> agents;
 
 	//Cached version of the Vosk Model.
 	private Model _model;
@@ -297,20 +301,31 @@ public class VoskSpeechToText : MonoBehaviour
 
 		if (!PlayerMovement.enableControls) return;
 
-        if (Input.GetKeyDown(keyDaniyal))
+        for (int i = 0; i < voiceKeys.Length; i++)
 		{
-			IO_Manager.instance.currentActiveAgent = daniyal;
+            if (Input.GetKeyDown(voiceKeys[i]))
+            {
+                IO_Manager.instance.SetAgent(agents[i]);
+				talkingText.text = "talking to " + agents[i].characterName;
+                ToggleRecording();
+                return; // Exit after the first key is pressed
+            }
+        }
+		if (Input.GetKeyDown(keyAll))
+		{
+			IO_Manager.instance.SetAllAgents(agents);
+            talkingText.text = "talking to all";
             ToggleRecording();
 		}
-		else if (Input.GetKeyDown(keyUsman))
+
+		for (int i = 0;i < voiceKeys.Length; i++)
 		{
-            IO_Manager.instance.currentActiveAgent = usman;
-            ToggleRecording();
+            if (Input.GetKeyUp(voiceKeys[i]) || Input.GetKeyUp(keyAll))
+            {
+				talkingText.text = "";
+                ToggleRecording();
+            }
         }
-
-		if (Input.GetKeyUp(keyUsman) || Input.GetKeyUp(keyDaniyal))
-            ToggleRecording();
-
     }
 
 	//Callback from the voice processor when new audio is detected
@@ -420,7 +435,4 @@ public class VoskSpeechToText : MonoBehaviour
 
 		voskRecognizerReadMarker.End();
 	}
-
-
-
 }

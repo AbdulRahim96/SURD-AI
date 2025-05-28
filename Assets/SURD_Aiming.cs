@@ -23,6 +23,8 @@ public class SURD_Aiming : MonoBehaviour
             {
                 Raycasting();
             }
+            if (Input.GetKeyDown(KeyCode.F1))
+                Raycasting();
         }
         else
             Raycasting();

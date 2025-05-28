@@ -14,7 +14,7 @@ public class IO_Manager : MonoBehaviour
     public string testinput;
     public VoskSpeechToText voiceInput;
 
-    public Agent currentActiveAgent;
+    public List<Agent> currentActiveAgents;
     [TextArea(1, 5)]
     public string sentence, inputStructure;
 
@@ -29,6 +29,19 @@ public class IO_Manager : MonoBehaviour
     private void Start()
     {
         voiceInput.OnTranscriptionResult += onVoiceComplete;
+    }
+
+    public void SetAgent(Agent agent)
+    {
+        // set the list to empty first then add the agent
+        currentActiveAgents.Clear();
+        currentActiveAgents.Add(agent);
+    }
+
+    public void SetAllAgents(List<Agent> agents)
+    {
+        currentActiveAgents.Clear();
+        currentActiveAgents = agents;
     }
     public void UpdateSentence(string str) // user input from typing
     {
@@ -51,7 +64,7 @@ public class IO_Manager : MonoBehaviour
             objects += obj.objectName + " (" + obj.description + "), ";
         }
 
-        string personality = "Personality / Backstory: Name is " + currentActiveAgent.characterName + ", " + currentActiveAgent.background + ", ";
+        string personality = "Personality / Backstory: Name is " + currentActiveAgents[0].characterName + ", " + currentActiveAgents[0].background + ", ";
         string userInput = "Natural language input: " + sentence;
 
         string format = actions + objects + personality + userInput;
@@ -62,7 +75,7 @@ public class IO_Manager : MonoBehaviour
     public async void StartProcess()
     {
         print("Start Processing..");
-        SetStructure(currentActiveAgent.GetComponent<ActionHandler>(), Interactables.instance);
+        SetStructure(currentActiveAgents[0].GetComponent<ActionHandler>(), Interactables.instance);
 
 
         SURD_AI.ResponseData responseData;
@@ -78,20 +91,26 @@ public class IO_Manager : MonoBehaviour
         // output recieved from SURD AI is sent back to environemnt to match
         Processor p = new Processor(responseData, Interactables.instance);
         ShowSubtitle(p.verbalResponse);
-        currentActiveAgent.GetComponent<ActionHandler>().DoAction(p);
+
+        foreach (var agent in currentActiveAgents)
+        {
+            agent.GetComponent<ActionHandler>().DoAction(p);
+        }
+
     }
 
     public void ShowSubtitle(string str)
     {
         // str is the verbal response came from SURD AI
-        string subtitle = currentActiveAgent.characterName + ": " + str;
-        
+        int randomAgentIndex = Random.Range(0, currentActiveAgents.Count);
+        currentActiveAgents[randomAgentIndex].Speak(str); // LMNT Voice to Speech
 
+        string subtitle = currentActiveAgents[randomAgentIndex].characterName + ": " + str;
+        
         // this is used to define animation of text
         // (animation is like a character by character with the duration of 0.1 seconds)
         subtitleText.text = "";
         subtitleText.DOText(subtitle, 0.1f);
-
 
         // subtitle will disappear after 5 seconds 
         subtitleText.DOText("", 0).SetDelay(5);
