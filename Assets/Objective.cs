@@ -13,11 +13,11 @@ public class Objective : MonoBehaviour
 
     private void Update()
     {
-        if (value == 3)
+        if (value >= 3)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                value++;
+                value = 0;
                 StartCoroutine(EnableCutscene());
             }
         }
@@ -26,6 +26,7 @@ public class Objective : MonoBehaviour
     IEnumerator EnableCutscene()
     {
         Time.timeScale = 0.2f;
+        yield return new WaitForSeconds(0.1f);
         cameraCutscene.SetActive(true);
         yield return new WaitForSecondsRealtime(4f);
         cameraCutscene.SetActive(false);

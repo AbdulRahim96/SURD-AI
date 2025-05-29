@@ -20,6 +20,7 @@ public class PlayerCameraSystem : MonoBehaviour
     void Start()
     {
         targetPosition = normalPosition;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()

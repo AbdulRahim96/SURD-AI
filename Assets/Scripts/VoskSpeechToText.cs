@@ -299,7 +299,7 @@ public class VoskSpeechToText : MonoBehaviour
             }
         }
 
-		if (!PlayerMovement.enableControls) return;
+		//if (!PlayerMovement.enableControls) return;
 
         for (int i = 0; i < voiceKeys.Length; i++)
 		{

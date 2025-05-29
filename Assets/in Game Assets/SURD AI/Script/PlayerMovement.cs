@@ -89,16 +89,11 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.Rotate(0f, Input.GetAxis("Mouse X") * mouseSensitive * 100f * Time.deltaTime, 0f);
 
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            crouch = !crouch;
+        }
 
-        if (Input.GetMouseButton(1)) {
-            crouch = true;
-        }
-        else { 
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                crouch = !crouch;
-            }
-        }
 
         // Sprint
         if (Input.GetKey(KeyCode.LeftShift) && movement == Vector3.zero){

@@ -41,7 +41,11 @@ public class IO_Manager : MonoBehaviour
     public void SetAllAgents(List<Agent> agents)
     {
         currentActiveAgents.Clear();
-        currentActiveAgents = agents;
+
+        for (int i = 0; i < agents.Count; i++)
+        {
+            currentActiveAgents.Add(agents[i]);
+        }
     }
     public void UpdateSentence(string str) // user input from typing
     {

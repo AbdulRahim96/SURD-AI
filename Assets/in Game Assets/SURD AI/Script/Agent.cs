@@ -125,7 +125,7 @@ public class Agent : MonoBehaviour
         // Draw the ray in the Scene view (green if hit, red if not)
         if (Physics.Raycast(transform.position + Vector3.up, direction.normalized, out RaycastHit hit, distance))
         {
-            if (hit.transform == target)
+            if (hit.transform == target || hit.transform.CompareTag("Enemy"))
             {
                 Debug.DrawRay(transform.position + Vector3.up, direction.normalized * hit.distance, Color.green);
                 return true;
@@ -226,9 +226,15 @@ public class Agent : MonoBehaviour
     {
         transform.DOLookAt(target.position, .5f);
         yield return StartCoroutine(Switch_Weapon());
-        shootingParticle = bazooka;
-        shootingParticle.Play();
+
+        while(!PathClear())
+        {
+            agent.stoppingDistance--;
+            yield return StartCoroutine(moving());
+        }
+        bazooka.Play();
         bazooka.GetComponent<AudioSource>().Play();
+        yield return StartCoroutine(Switch_Weapon());
     }
     IEnumerator Switch_Weapon()
     {

@@ -7,8 +7,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using static ParsingTest;
 using System.Threading.Tasks;
-using UnityEngine.Windows;
-using UnityEditor.PackageManager.Requests;
 using static callReq;
 
 public class SURD_AI : MonoBehaviour

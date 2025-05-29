@@ -48,13 +48,13 @@ public class Enemy : Health
     {
         while (Vector3.Distance(transform.position, player.position) >= agent.stoppingDistance)
         {
-            animator.SetBool("chase", true);
+            animator.SetBool("chasing", true);
             agent.SetDestination(player.position);
             yield return null;
         }
 
         agent.SetDestination(transform.position);
-        animator.SetBool("chase", false);
+        animator.SetBool("chasing", false);
     }
 
     IEnumerator Attack()
