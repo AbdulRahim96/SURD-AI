@@ -10,14 +10,13 @@ using UnityLibrary;
 
 public class Agent : MonoBehaviour
 {
-    public string characterName, background;
+    public string characterName, backgroundAndPersonality;
     public ParticleSystem shootingParticle;
     public ParticleSystem machineGun;
     public ParticleSystem bazooka;
     public GameObject explosive;
     public Transform target;
     public float attackDistance;
-    public State currentState, requiredAction;
     public NavMeshAgent agent;
     public float moveSpeed;
     public Animator animator;
@@ -29,15 +28,7 @@ public class Agent : MonoBehaviour
     public bool isVerbalResponse;
     private LMNTSpeech speech;
     private Processor currentAction;
-    public enum State
-    {
-        None,
-        Moving,
-        Attacking,
-        pickup
-    }
 
-    private bool isRepeating;
     private PlayerMovement controller;
     public bool AI;
     private void Awake()

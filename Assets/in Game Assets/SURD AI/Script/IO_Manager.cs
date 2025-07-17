@@ -68,7 +68,7 @@ public class IO_Manager : MonoBehaviour
             objects += obj.objectName + " (" + obj.description + "), ";
         }
 
-        string personality = "Personality / Backstory: Name is " + currentActiveAgents[0].characterName + ", " + currentActiveAgents[0].background + ", ";
+        string personality = "Personality / Backstory: Name is " + currentActiveAgents[0].characterName + ", " + currentActiveAgents[0].backgroundAndPersonality + ", ";
         string userInput = "Natural language input: " + sentence;
 
         string format = actions + objects + personality + userInput;

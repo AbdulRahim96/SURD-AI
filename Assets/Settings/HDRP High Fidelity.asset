@@ -15,7 +15,7 @@ MonoBehaviour:
   m_RenderPipelineSettings:
     supportShadowMask: 0
     supportSSR: 1
-    supportSSRTransparent: 0
+    supportSSRTransparent: 1
     supportSSAO: 1
     supportSSGI: 1
     supportSubsurfaceScattering: 1
@@ -28,7 +28,7 @@ MonoBehaviour:
       m_SchemaId:
         m_Id: With3Levels
     supportVolumetrics: 1
-    supportVolumetricClouds: 0
+    supportVolumetricClouds: 1
     supportLightLayers: 1
     renderingLayerMaskBuffer: 0
     supportWater: 1
@@ -86,7 +86,7 @@ MonoBehaviour:
     supportVFXRayTracing: 0
     supportedRayTracingMode: 3
     lightLoopSettings:
-      cookieAtlasSize: 512
+      cookieAtlasSize: 1024
       cookieFormat: 74
       cookieAtlasLastValidMip: 0
       cookieTexArraySize: 16

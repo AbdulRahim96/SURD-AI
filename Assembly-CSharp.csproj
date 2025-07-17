@@ -267,6 +267,7 @@
     <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
     <None Include="Assets\ThirdParty\Vosk\Plugins\Windows\libvosk.dll" />
+    <None Include="Assets\in Game Assets\Characters\Sohaib\Sohaib_ImportInfo.txt" />
     <None Include="Assets\in Game Assets\NativeAmericanPack\Source\Shaders\DirectionalBlend.shader" />
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Legs Animator - Readme.txt" />
     <None Include="Assets\Invector-3rdPersonController_LITE\README_Basic.txt" />
@@ -274,6 +275,7 @@
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Magic Effects\Shaders\Ice.shader" />
+    <None Include="Assets\Real Stars Skybox\Demo Scene\Documentation.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Misc Effects\Shaders\Respawn.shader" />
     <None Include="Assets\Resources\LMNT_Voices.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -1346,6 +1348,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Cinemachine.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Cinemachine.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1418,8 +1424,16 @@
       <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Bindings.OpenImageIO.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Bindings.OpenImageIO.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Rendering.LightTransport.Editor">
@@ -1446,12 +1460,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Collections.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
+    <Reference Include="Unity.Sentis.iOSBLAS">
+      <HintPath>Library\ScriptAssemblies\Unity.Sentis.iOSBLAS.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Animation.Rigging">
-      <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
+    <Reference Include="Unity.Collections.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
@@ -1460,6 +1474,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Sentis">
+      <HintPath>Library\ScriptAssemblies\Unity.Sentis.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Multiplayer.Center.Common">
@@ -1474,6 +1492,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Animation.Rigging">
+      <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.MixedReality.Toolkit.TextToSpeech.Windows">
       <HintPath>Library\ScriptAssemblies\Microsoft.MixedReality.Toolkit.TextToSpeech.Windows.dll</HintPath>
       <Private>False</Private>
@@ -1482,20 +1504,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Sentis">
-      <HintPath>Library\ScriptAssemblies\Unity.Sentis.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Fbx.Editor">
       <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Sentis.iOSBLAS">
-      <HintPath>Library\ScriptAssemblies\Unity.Sentis.iOSBLAS.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
@@ -1554,12 +1568,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Formats.Fbx.Editor">
@@ -1578,12 +1596,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Sentis.MacBLAS">
       <HintPath>Library\ScriptAssemblies\Unity.Sentis.MacBLAS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Sentis.ONNX">
@@ -1644,13 +1662,13 @@
       <Project>{CE5AF596-0CC9-BE25-78A9-D75A76EDEA2E}</Project>
       <Name>uLipSync.Samples.VRM.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="uLipSync.Samples.Animator.Runtime.csproj">
-      <Project>{E0E17B12-CF0B-D472-0ED3-444A91455198}</Project>
-      <Name>uLipSync.Samples.Animator.Runtime</Name>
-    </ProjectReference>
     <ProjectReference Include="Bunny83.simpleJson.csproj">
       <Project>{A6AF85C0-E104-00B4-5E98-C5890735A266}</Project>
       <Name>Bunny83.simpleJson</Name>
+    </ProjectReference>
+    <ProjectReference Include="uLipSync.Samples.Animator.Runtime.csproj">
+      <Project>{E0E17B12-CF0B-D472-0ED3-444A91455198}</Project>
+      <Name>uLipSync.Samples.Animator.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
