@@ -274,6 +274,7 @@
     <None Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Presets Directory\Leg Motion Presets\dummy.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\UnityTechnologies\ParticlePack\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\in Game Assets\PolygonParticles\Materials\SHARED BY LUXURYPANDA.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Magic Effects\Shaders\Ice.shader" />
     <None Include="Assets\Real Stars Skybox\Demo Scene\Documentation.txt" />
     <None Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Misc Effects\Shaders\Respawn.shader" />
@@ -1662,13 +1663,13 @@
       <Project>{CE5AF596-0CC9-BE25-78A9-D75A76EDEA2E}</Project>
       <Name>uLipSync.Samples.VRM.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Bunny83.simpleJson.csproj">
-      <Project>{A6AF85C0-E104-00B4-5E98-C5890735A266}</Project>
-      <Name>Bunny83.simpleJson</Name>
-    </ProjectReference>
     <ProjectReference Include="uLipSync.Samples.Animator.Runtime.csproj">
       <Project>{E0E17B12-CF0B-D472-0ED3-444A91455198}</Project>
       <Name>uLipSync.Samples.Animator.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Bunny83.simpleJson.csproj">
+      <Project>{A6AF85C0-E104-00B4-5E98-C5890735A266}</Project>
+      <Name>Bunny83.simpleJson</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
