@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class Interactables : MonoBehaviour
@@ -42,12 +43,38 @@ public class Interactables : MonoBehaviour
             if (_objects[i].target == obj)
             {
                 _objects.Remove(_objects[i]);
+                Refresh();
                 return;
             }
         }
     }
 
-    [System.Serializable]
+    public void RemoveItem(string name, string description)
+    {
+        for (int i = 0; i < _objects.Count; i++)
+        {
+            if (_objects[i].objectName == name && _objects[i].description == description)
+            {
+                _objects.Remove(_objects[i]);
+                Refresh();
+                return;
+            }
+        }
+    }
+
+    private void Refresh()
+    {
+        foreach (Object obj in _objects)
+        {
+            if (obj.target == null)
+            {
+                _objects.Remove(obj);
+                return; // Exit the loop after removing an item
+            }
+        }
+    }
+
+        [System.Serializable]
     public class Object
     {
         public string objectName;

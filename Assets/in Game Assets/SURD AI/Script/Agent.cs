@@ -89,7 +89,7 @@ public class Agent : MonoBehaviour
         if(isVerbalResponse)
         {
             speech.dialogue = str;
-            StartCoroutine(speech.Talk());
+            speech.StartTalking();
         }
     }
     private IEnumerator moving()

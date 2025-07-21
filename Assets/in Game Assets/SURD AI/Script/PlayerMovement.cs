@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using DG.Tweening;
+using Unity.Cinemachine;
+using System.Threading.Tasks;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     public Transform cameraPack;
+    public CinemachineBasicMultiChannelPerlin shakeCamera;
     public Rig RHandRig;
     public Rig WeaponRig; 
     public Rig LHandRig;
@@ -34,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = Physics.gravity.y;
     private Vector3 oldPos;
     [SerializeField]
-    private bool crouch = true;
+    private bool crouch;
     private bool freezMovement = false;
     private float radius;
     private float height;
@@ -44,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool enableControls = true;
     public bool AI;
     void Awake(){
+        crouch = false;
         controller = GetComponent<CharacterController>();
         Hcamera = cameraPack.GetChild(0);
       //  Cursor.visible = false;
@@ -67,7 +71,16 @@ public class PlayerMovement : MonoBehaviour
             if (!isReload) {
                 if (Input.GetMouseButton(0) && usingGun.CheckAmo()) {
                     usingGun.Shoot();
+                    CameraShake(2f);
                 }
+                else
+                {
+                    CameraShake(0f);
+                }
+            }
+            else
+            {
+                CameraShake(0f);
             }
         }
         GravitySystem();
@@ -88,12 +101,6 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * movement * speed;
         }
         transform.Rotate(0f, Input.GetAxis("Mouse X") * mouseSensitive * 100f * Time.deltaTime, 0f);
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            crouch = !crouch;
-        }
-
 
         // Sprint
         if (Input.GetKey(KeyCode.LeftShift) && movement == Vector3.zero){
@@ -235,7 +242,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    
+    private void CameraShake(float amp)
+    {
+        shakeCamera.AmplitudeGain = amp;
+    }
+
 
     IEnumerator FlipForward(float duration)
     {
@@ -245,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
         freezMovement = true;
         speed = 6;
         controller.radius = 1f;
-        moveDirection *= 3;
+        moveDirection = moveDirection.normalized * 7.5f;
         // Calculate the target angle on the Y-axis
         float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
 
@@ -258,6 +269,8 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = Vector3.zero;
         freezMovement = false;
     }
+
+    
 
     IEnumerator Kick(float duration)
     {
@@ -316,4 +329,10 @@ public class PlayerMovement : MonoBehaviour
         isReload = false;
     }
    
+    public async void Shake(float duration)
+    {
+        shakeCamera.AmplitudeGain = 3f;
+        await Task.Delay((int)(duration * 1000));
+        shakeCamera.AmplitudeGain = 0f;
+    }
 }

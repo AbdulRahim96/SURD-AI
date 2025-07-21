@@ -11,6 +11,6 @@ public class SURD_Item : MonoBehaviour
 
     private void OnDestroy()
     {
-        Interactables.instance.RemoveItem(transform);
+        Interactables.instance.RemoveItem(objectName, objectDescription);
     }
 }

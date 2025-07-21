@@ -49,14 +49,6 @@ public class PlayerCameraSystem : MonoBehaviour
             aimTransform.position = cameraTransform.position + cameraTransform.forward * range;
         }
 
-        if (Physics.Raycast(dynamicCamera.position, -dynamicCamera.forward, out hit, cameraDystance))
-        {
-            normalPosition.position = hit.point + normalPosition.forward * 0.2f;
-        }
-        else
-        {
-            normalPosition.localPosition = new Vector3(normalPosition.localPosition.x, normalPosition.localPosition.y, -cameraDystance);
-        }
 
 
     }

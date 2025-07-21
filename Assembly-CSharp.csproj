@@ -163,6 +163,7 @@
     <Compile Include="Assets\in Game Assets\SURD AI\Script\Processor.cs" />
     <Compile Include="Assets\FImpossible Creations\Shared Tools\Editor Tools\FDebug_PerformanceTest.cs" />
     <Compile Include="Assets\Scripts\Weapons\Crosshair.cs" />
+    <Compile Include="Assets\OnEnableEvent.cs" />
     <Compile Include="Assets\Tank.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.Reference.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Modules - Community\LAM_FadeLegsSystemOnAnimator.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Assets\UnityTechnologies\ParticlePack\Shared\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\Bases\LAM_FadeOnAnimatorStatusBase.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.ExtraModules.cs" />
+    <Compile Include="Assets\AudioListen.cs" />
     <Compile Include="Assets\UnityTechnologies\ParticlePack\Shared\Scripts\SimpleCharacterMotor.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\Glueing Helpers\LegsA.Glue.Handler.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\LegsAnimator.cs" />
@@ -207,12 +209,14 @@
     <Compile Include="Assets\Libraries\DLLManipulator\scripts\NativeDll.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA.Utils.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\LegsA Control Modules\Bases\LAM_Variable.cs" />
+    <Compile Include="Assets\RestartLogic.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Extra Settings\LegsA.StepHeatmap.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Modules - Community\LAM_FadeGluingOnAnimator.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\Glueing Helpers\LegsA.Glue.Handler.Animation.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Align.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Leg Algorithms\LegsA.Gizmos.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Animating\Legs Animator\Core\Hips Algorithms\LegsA.Hips.Stability.cs" />
+    <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\FImpossible Creations\Plugins - Shared\Animating Help\SkeletonRecognize.cs" />
     <Compile Include="Assets\Libraries\eSpeakWrapper\ESpeakVoice.cs" />
     <Compile Include="Assets\in Game Assets\SURD AI\Script\Agent.cs" />

@@ -71,6 +71,11 @@ public class LMNTSpeech : MonoBehaviour {
     _audioSource.Play();
   }
 
+  public void StartTalking()
+        {
+            StartCoroutine(Talk());
+        }
+
   private string LookupByName(string name) {
     return _voiceList.Find(v => v.name == name).id;
   }
